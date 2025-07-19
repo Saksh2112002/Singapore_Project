@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wild Wild Wet - Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #b0005c;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #b0005c;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: #b0005c;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    
+.slider {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; 
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+ 
+
+
+.slider-nav{
+  position:absolute; bottom:12px; left:50%;
+  transform:translateX(-50%);
+  display:flex; gap:.55rem;
+}
+.slider-nav button{
+  width:12px; height:12px;
+  border:0; border-radius:50%;
+  background:#fff; opacity:.55; cursor:pointer;
+  transition:opacity .25s;
+}
+.slider-nav button.active{
+  opacity:1;
+   background:#b0005c;
+  }
+.slider-nav button:focus-visible{
+  outline:2px solid #b0005c;
+}
+
+
+
+
+@media (min-width:1024px){
+  .slide img{height:60vh;}
+}
+
+
+@media (max-width:1023px){
+  .slide img{height:50vh;}
+}
+
+
+@media (max-width:768px){
+  .slide img{height:45vh;}
+  .slider-nav button{width:13px;height:13px;}
+}
+
+
+@media (max-width:500px){
+  .slide img{height:40vh;}
+  .slider-nav button{width:14px;height:14px;}
+}
+
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .container h1 {
+      color: #b0005c;
+      font-size: 2.5rem;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      color: #444;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #8a0047;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What To Do</a></li>
+    <li><a href="index.html#dont">What Not Do</a></li>
+     <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+ 
+ <div class="container">
+<section class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="assets/Ular-Lah (Wild Wild Wet) of singapore.jpg" alt="Ular-Lah (Wild Wild Wet)"></div>
+    <div class="slide"><img src="assets/Torpedo (Wild Wild Wet).jpg" alt="Torpedo (Wild Wild Wet)"></div>
+    <div class="slide"><img src="assets/Red Vortex (Wild Wild Wet).jpg" alt="Red Vortex (Wild Wild Wet)"></div>
+    
+  </div>
+  <div class="slider-nav"></div> 
+</section>
+
+  <h1>🌊 Wild Wild Wet</h1>
+
+  <p>
+    Located in Downtown East, Wild Wild Wet is one of Singapore’s largest and most popular water parks. Perfect for families, thrill-seekers, and anyone looking to beat the tropical heat, the park offers an exciting blend of high-speed slides, relaxing lazy rivers, and splash zones for all ages.
+  </p>
+
+  <p><strong>📍 Location:</strong> 1 Pasir Ris Close, Singapore 519599</p>
+  <p><strong>🚇 How to Get There:</strong> Take the MRT to Pasir Ris Station (EW1) and walk about 10 minutes to Downtown East.</p>
+
+  <h2>🎢 Attractions</h2>
+  <ul>
+    <li>
+  <strong>Ular-Lah (Wild Wild Wet):</strong><br>
+  <img src="assets/Ular-Lah (Wild Wild Wet) of singapore.jpg" 
+       alt="Ular-Lah Ride at Wild Wild Wet" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+
+  <strong>📍 Location:</strong> Wild Wild Wet, 1 Pasir Ris Close, Singapore 519599<br>
+  <strong>🎢 Overview:</strong> Ular-Lah is Singapore’s first raft slide, designed to give you the thrill of white-water rafting. With sharp turns and steep plunges, it’s perfect for groups of 4–6 people.<br>
+
+  <strong>🌊 Ride Features:</strong>
+  <ul>
+    <li>Large family-sized rafts that spin and splash down the slide.</li>
+    <li>Simulates a white-water river rafting adventure.</li>
+    <li>Great for team fun and laughter.</li>
+  </ul>
+
+  <strong>🧒 Rider Info:</strong> Riders must be at least 1.22m tall to participate. Group ride only.<br>
+  <strong>🕐 Queue Times:</strong> Popular ride — best to visit early before crowds build up.<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Hold tight! The raft spins quickly on the way down.</li>
+    <li>Coordinate your group’s weight for balanced sliding.</li>
+    <li>Use the express pass on weekends to skip long lines.</li>
+  </ul>
+</li><br>
+  
+    <li>
+  <strong>Torpedo (Wild Wild Wet):</strong><br>
+  <img src="assets/Torpedo (Wild Wild Wet).jpg" 
+       alt="Torpedo Ride at Wild Wild Wet" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+
+  <strong>📍 Location:</strong> 1 Pasir Ris Close, Singapore 519599 (Inside Downtown East)<br>
+  <strong>🎢 Overview:</strong> Torpedo is Wild Wild Wet’s most intense thrill ride. Step into a transparent capsule, hear the countdown, and brace yourself as the floor disappears beneath you—sending you plummeting straight down a high-speed tunnel.<br>
+
+  <strong>💥 Ride Highlights:</strong>
+  <ul>
+    <li>6-storey vertical free-fall drop</li>
+    <li>Speed of up to 70km/h</li>
+    <li>Enclosed see-through slide sections</li>
+    <li>Heart-racing twists and turns</li>
+  </ul>
+
+  <strong>🧒 Rider Info:</strong> Minimum height: 1.22m. Not suitable for those with heart conditions.<br>
+  <strong>🕐 Queue Tips:</strong> Arrive before noon for shorter wait times.<br>
+
+  <strong>🌟 Pro Tips:</strong>
+  <ul>
+    <li>Take a deep breath before launch—it’s fast and intense!</li>
+    <li>Wear snug swimwear—this is a high-velocity ride.</li>
+    <li>Use the nearby lockers for phones and accessories.</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Vortex (Wild Wild Wet):</strong><br>
+  <img src="assets/Red Vortex (Wild Wild Wet).jpg" 
+       alt="Vortex Ride at Wild Wild Wet" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+
+  <strong>📍 Location:</strong> 1 Pasir Ris Close, Singapore 519599 (Inside Downtown East)<br>
+  <strong>🎢 Overview:</strong> Vortex is a high-speed enclosed body slide that spins and loops you through a thrilling 360° spiral before splashing out. It's perfect for adrenaline junkies who love fast, disorienting fun.<br>
+
+  <strong>🚀 Ride Highlights:</strong>
+  <ul>
+    <li>Enclosed spiral tunnel slide</li>
+    <li>360-degree loops and sharp twists</li>
+    <li>Sudden drops and splash exits</li>
+    <li>Single-rider body slide (no floats)</li>
+  </ul>
+
+  <strong>🧒 Rider Info:</strong> Minimum height: 1.22m. Must be able to swim. No life jackets allowed on this ride.<br>
+  <strong>🕐 Best Time to Ride:</strong> Late afternoon when crowds are lighter.<br>
+
+  <strong>🌟 Pro Tips:</strong>
+  <ul>
+    <li>Cross your arms and legs for maximum speed and safety.</li>
+    <li>Keep your head back to reduce water splash in the face.</li>
+    <li>Store all items in lockers—nothing is allowed during the ride.</li>
+  </ul>
+</li><br>
+  
+   <li>
+  <strong>Shiok River (Wild Wild Wet):</strong><br>
+  <img src="assets/Shiok River (Wild Wild Wet).jpg" 
+       alt="Shiok River at Wild Wild Wet" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+
+  <strong>📍 Location:</strong> 1 Pasir Ris Close, Singapore 519599 (Inside Downtown East)<br>
+  <strong>🌀 Overview:</strong> Shiok River offers a peaceful contrast to the high-speed thrills of other rides. Float along a gentle lazy river that circles much of the park, letting you relax and enjoy the tropical vibes.<br>
+
+  <strong>💧 River Features:</strong>
+  <ul>
+    <li>Lazy river loop around the waterpark</li>
+    <li>Gentle current – ideal for all ages</li>
+    <li>Multiple entry and exit points</li>
+    <li>Inflatable floats provided</li>
+  </ul>
+
+  <strong>🧒 Rider Info:</strong> Suitable for all ages. Children under 1.22m must be accompanied by an adult.<br>
+  <strong>🕐 Best Time to Ride:</strong> Late morning or after lunch for a relaxing float.<br>
+
+  <strong>🌟 Pro Tips:</strong>
+  <ul>
+    <li>Use waterproof sunscreen – the ride is mostly open-air.</li>
+    <li>Float with friends or family for a fun group experience.</li>
+    <li>Pause under the waterfalls for a quick splash.</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Kids Zone (Wild Wild Wet):</strong><br>
+  <img src="assets/Kids Zone (Wild Wild Wet).jpg" 
+       alt="Kids Zone at Wild Wild Wet" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+
+  <strong>📍 Location:</strong> 1 Pasir Ris Close, Singapore 519599 (Inside Downtown East)<br>
+  <strong>👶 Overview:</strong> Specially designed for toddlers and young children, the Kids Zone offers safe water play with mini slides, shallow pools, and interactive fountains. It’s a paradise for the little ones!<br>
+
+  <strong>🎠 Attractions:</strong>
+  <ul>
+    <li>Yippee: Mini splash pool with colorful water jets</li>
+    <li>Kidz Zone: Scaled-down slides for younger kids</li>
+    <li>Interactive fountains and tipping buckets</li>
+    <li>Shaded play areas and soft flooring for safety</li>
+  </ul>
+
+  <strong>🧒 Rider Info:</strong> Ideal for ages 18 months to 8 years. Parental supervision required.<br>
+  <strong>🕐 Best Time to Visit:</strong> Early morning or late afternoon when it’s cooler.<br>
+
+  <strong>🌟 Pro Tips:</strong>
+  <ul>
+    <li>Bring swim diapers for toddlers (mandatory).</li>
+    <li>Use shaded seating nearby to keep an eye on your kids comfortably.</li>
+    <li>Pack extra clothes and snacks — kids won’t want to leave!</li>
+  </ul>
+</li><br>
+ 
+  </ul>
+
+  <h2>🍴 Food & Amenities</h2>
+  <ul>
+    <li>On-site dining: Local and international dishes available inside the park.</li>
+    <li>Shower facilities, lockers, and rental cabanas available.</li>
+    <li>Retail shop for swimwear, goggles, and souvenirs.</li>
+  </ul>
+
+  <p><strong>🕐 Opening Hours:</strong> 12:00 PM – 6:00 PM (Weekdays), 11:00 AM – 6:00 PM (Weekends & Holidays)</p>
+  <p><strong>🎫 Tickets:</strong> Prices vary by age and day; discounted rates for locals and online bookings available.</p>
+
+  <h2>🌟 Tips for Visitors</h2>
+  <ul>
+    <li>Arrive early on weekends to avoid long queues.</li>
+    <li>Book tickets online for the best deals.</li>
+    <li>Apply waterproof sunscreen and bring a dry change of clothes.</li>
+    <li>Use e-lockers for convenience.</li>
+  </ul>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+</div>
+
+<script src="wild_wild_wet.js"></script>
+
+</body>
+</html>

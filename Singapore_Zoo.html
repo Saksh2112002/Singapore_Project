@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Singapore Zoo</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #b0005c;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-links li a:hover {
+      color:#b0005c;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color:#b0005c;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+ .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0rem auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  padding-top: 45%; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Dot Navigation */
+.slider-nav {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.slider-nav button.active {
+  background: #b0005c;
+  opacity: 1;
+}
+
+
+@media (max-width: 1024px) {
+  .slide::before {
+    padding-top: 52%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide::before {
+    padding-top: 58%;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide::before {
+    padding-top: 64%;
+  }
+}
+
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .container h1 {
+      font-size: 2.5rem;
+      color:  #b0005c;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color:#b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color:#8a0047;
+    }
+  </style>
+</head>
+<body>
+
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What to Do</a></li>
+    <li><a href="index.html#dont">What Not to Do</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="container">
+
+<section class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="assets/Singapore Zoo.jpg" alt="Singapore Zoo" /></div>
+    <div class="slide"><img src="assets/Rainforest KidzWorld.jpg" alt="Rainforest KidzWorld" /></div>
+    <div class="slide"><img src="assets/Elephants of Asia.jpg" alt="Elephants at Work Show" /></div>
+  </div>
+  <div class="slider-nav"></div>
+</section>
+
+
+
+  <h1>🦁 Singapore Zoo</h1>
+
+  <p>The Singapore Zoo is one of the world’s best rainforest zoos, home to over 2,800 animals of more than 300 species. Nestled within the Mandai Wildlife Reserve, it features open enclosures, lush tropical landscaping, and immersive wildlife experiences for all ages.</p>
+
+  <h2>🌟 Highlights</h2>
+  <ul>
+   <li>
+  <strong>Rainforest KidzWorld:</strong><br>
+  <img src="assets/Rainforest KidzWorld.jpg" alt="Rainforest KidzWorld at Singapore Zoo" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Singapore Zoo, 80 Mandai Lake Road, Singapore 729826<br>
+  <strong>🏞️ Overview:</strong> Rainforest KidzWorld is a vibrant, family-friendly zone within the Singapore Zoo designed specifically for children. It blends nature, fun, and learning, offering a safe and interactive environment where kids can get close to animals and splash around.<br>
+  <strong>🎡 What You’ll Find:</strong>
+  <ul>
+    <li>Petting Zoo: Get up close with goats, rabbits, and ponies</li>
+    <li>Rainforest-Themed Playground: Rope bridges, tunnels, and treehouse fun</li>
+    <li>Water Play Zone: Slides and splash areas to cool off in tropical heat</li>
+    <li>Educational Shows & Feeding Sessions: Learn about animal care and behavior</li>
+    <li>Pony Rides & Animal Encounters (selected hours)</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT North-South Line → Khatib Station (NS14) → Take Mandai Khatib Shuttle Bus to Singapore Zoo<br>
+  <strong>🕐 Opening Hours:</strong> Daily from 8:30 AM to 6:00 PM (last admission at 5:00 PM)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Bring swimwear and towels for the water play area</li>
+    <li>Perfect for children aged 3–12 — keep an eye on show timings</li>
+    <li>Stroller-friendly with shaded rest areas and kid-friendly dining options nearby</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Wild Africa Zone:</strong><br>
+  <img src="assets/Wild Africa Zone.jpg" alt="Wild Africa Zone at Singapore Zoo" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Singapore Zoo, 80 Mandai Lake Road, Singapore 729826<br>
+  <strong>🦁 Overview:</strong> The Wild Africa Zone brings the savannahs of Africa to life within the lush landscape of the Singapore Zoo. It features iconic African animals in open and naturalistic habitats, offering guests an immersive safari-style experience.<br>
+  <strong>🦓 What You’ll Find:</strong>
+  <ul>
+    <li>African Lions: Observe majestic big cats lounging in the shade</li>
+    <li>Cheetahs: Watch the world’s fastest land animals pacing their enclosure</li>
+    <li>White Rhinoceros: Learn about conservation efforts for these gentle giants</li>
+    <li>Giraffes & Zebras: Often seen together in the open plains zone</li>
+    <li>Meerkats & Warthogs: Adorable and energetic creatures in desert-style habitats</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT North-South Line → Khatib Station (NS14) → Take Mandai Khatib Shuttle Bus to Singapore Zoo<br>
+  <strong>🕐 Opening Hours:</strong> Daily from 8:30 AM to 6:00 PM (last admission at 5:00 PM)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Visit during cooler morning hours for the best animal activity</li>
+    <li>Check the zoo map for feeding session times, especially for giraffes</li>
+    <li>Bring binoculars or use the zoom on your phone for detailed animal viewing</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Fragile Forest:</strong><br>
+  <img src="assets/Fragile Forest.jpg" alt="Fragile Forest Singapore Zoo" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Singapore Zoo, 80 Mandai Lake Road, Singapore 729826<br>
+  <strong>🌳 Overview:</strong> Fragile Forest is a captivating biodome that replicates a rainforest ecosystem. Walk through a lush tropical environment teeming with free-ranging animals and insects, offering close-up encounters with nature’s tiniest wonders.<br>
+  <strong>🦋 What You’ll Find:</strong>
+  <ul>
+    <li>Free-flying butterflies and colorful birds like crowned pigeons</li>
+    <li>Two-toed sloths hanging from trees</li>
+    <li>Mouse deer and lemurs roaming freely near the path</li>
+    <li>Insectarium with beetles, stick insects, and hissing cockroaches</li>
+    <li>Educational zones on conservation and biodiversity</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT North-South Line → Khatib Station (NS14) → Mandai Khatib Shuttle to Singapore Zoo<br>
+  <strong>🕐 Opening Hours:</strong> Daily from 8:30 AM to 6:00 PM (last entry 5:00 PM)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Move slowly and look up—many animals blend into the foliage</li>
+    <li>Perfect for kids and nature photographers</li>
+    <li>Use quiet voices to avoid startling the animals</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Elephants of Asia:</strong><br>
+  <img src="assets/Elephants of Asia.jpg" alt="Elephants of Asia Singapore Zoo" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Singapore Zoo, 80 Mandai Lake Road, Singapore 729826<br>
+  <strong>🐘 Overview:</strong> Elephants of Asia is a beautifully themed exhibit dedicated to the conservation and education of the endangered Asian elephant. Set in a lush, Southeast Asian village-style landscape, it offers immersive encounters with these majestic giants.<br>
+  <strong>🧠 What You’ll Find:</strong>
+  <ul>
+    <li>Daily elephant presentations showcasing their intelligence and bond with caregivers</li>
+    <li>Interpretive zones explaining elephant habitats in Myanmar, Thailand, and Sri Lanka</li>
+    <li>Interactive feeding sessions (check showtimes)</li>
+    <li>Statues and murals depicting the cultural roles of elephants across Asia</li>
+    <li>Elephant-themed playground and viewing decks</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT North-South Line → Khatib Station (NS14) → Mandai Khatib Shuttle to Singapore Zoo<br>
+  <strong>🕐 Opening Hours:</strong> Daily from 8:30 AM to 6:00 PM (last entry 5:00 PM)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Catch the Elephant Presentation for fun facts and tricks</li>
+    <li>Stand near the front row for better views (you might get a splash!)</li>
+    <li>Bring a zoom lens or binoculars for great photo moments</li>
+  </ul>
+</li><br>
+ 
+  </ul>
+
+  <h2>🐵 Shows & Experiences</h2>
+  <ul>
+    <li><strong>Splash Safari:</strong> Sea lion show with acrobatics and audience interaction.</li>
+    <li><strong>Animal Friends Show:</strong> Great for kids featuring pet tricks and rescues.</li>
+    <li><strong>Wild Discovery Tour:</strong> Behind-the-scenes access with a personal guide (extra charge).</li>
+  </ul>
+
+  <h2>📍 Location</h2>
+  <p>80 Mandai Lake Road, Singapore 729826</p>
+
+  <h2>🚇 How to Get There</h2>
+  <p>MRT North-South Line → Khatib Station (NS14), then take Mandai Khatib Shuttle (approx. 15 mins)</p>
+
+  <h2>🕐 Opening Hours</h2>
+  <p>8:30 AM to 6:00 PM daily (last entry 5:00 PM)</p>
+
+  <h2>🎫 Admission</h2>
+  <ul>
+    <li>Adults: SGD 48</li>
+    <li>Children (3–12 years): SGD 33</li>
+    <li>Seniors (60+): SGD 20</li>
+  </ul>
+
+  <h2>🧭 Tips for Visitors</h2>
+  <ul>
+    <li>Buy tickets online to skip queues and save money</li>
+    <li>Visit early to avoid heat and crowds</li>
+    <li>Bring water, sunscreen, and wear breathable clothing</li>
+    <li>Use the tram for quick access across zones</li>
+  </ul>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+</div>
+
+<script src="Singapore_Zoo.js"></script>
+
+</body>
+</html>

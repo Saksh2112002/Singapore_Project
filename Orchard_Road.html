@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orchard Road - Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+    
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #b0005c;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #b0005c;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #b0005c;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+.slider {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Adjust if needed */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+
+.slider-nav{
+  position:absolute; bottom:12px; left:50%;
+  transform:translateX(-50%);
+  display:flex; gap:.55rem;
+}
+.slider-nav button{
+  width:12px; height:12px;
+  border:0; border-radius:50%;
+  background:#fff; opacity:.55; cursor:pointer;
+  transition:opacity .25s;
+}
+.slider-nav button.active{opacity:1; background:#b0005c;}
+.slider-nav button:focus-visible{outline:2px solid #b0005c;}
+
+
+@media (min-width:1024px){
+  .slide img{height:60vh;}
+}
+
+
+@media (max-width:1023px){
+  .slide img{height:50vh;}
+}
+
+
+@media (max-width:768px){
+  .slide img{height:45vh;}
+  .slider-nav button{width:13px;height:13px;}
+}
+
+
+@media (max-width:500px){
+  .slide img{height:40vh;}
+  .slider-nav button{width:14px;height:14px;}
+}
+
+
+ .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .container h1 {
+      color: #b0005c;
+      font-size: 2.5rem;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      color: #444;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #8a0047;
+    }
+
+  
+
+  </style>
+</head>
+<body>
+
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What to Do</a></li>
+    <li><a href="index.html#dont">What Not to Do</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="container">
+ 
+<section class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="assets/orchard road.jpg"                       alt="Orchard Road"></div>
+    <div class="slide"><img src="assets/Christmas-Tree-and-Toy-Truck.jpg"       alt="ION Orchard"></div>
+    <div class="slide"><img src="assets/Ngee ann city singapore.jpg"            alt="Ngee Ann City"></div>
+   
+  </div>
+  <div class="slider-nav"></div>  
+</section>
+
+  <h1>🛍️ Orchard Road</h1>
+
+  <p>
+    Orchard Road is Singapore’s premier shopping belt and an iconic destination for fashion, lifestyle, and entertainment. Stretching over 2 kilometers, it's lined with luxury boutiques, high-street brands, shopping malls, hotels, and eateries.
+  </p>
+
+  <p>Whether you're after designer couture or budget-friendly bargains, Orchard Road has it all. Key malls include:</p>
+
+  <ul><br>
+    <li>
+      <strong>ION Orchard:</strong><br>
+      <img src="assets/Christmas-Tree-and-Toy-Truck.jpg" alt="ION Orchard" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+      <br><br>
+      <strong>📍 Location:</strong> 2 Orchard Turn, Singapore 238801 (Directly above Orchard MRT Station)<br>
+      <strong>🏙️ Overview:</strong> ION Orchard is a luxury mall with futuristic architecture and a vibrant LED-lit façade.<br>
+      <strong>🛒 What You’ll Find:</strong>
+      <ul>
+        <li>Luxury Brands: Louis Vuitton, Prada, Gucci, Dior</li>
+        <li>Fashion: Zara, Uniqlo, Muji</li>
+        <li>Dining: TWG Tea Salon, Imperial Treasure</li>
+        <li>ION Sky: Free observation deck on level 56</li>
+      </ul>
+      <strong>🚇 How to Get There:</strong> MRT North-South Line → Orchard Station (NS22), Exit E<br>
+      <strong>🕐 Opening Hours:</strong> 10 AM – 10 PM daily<br>
+      <strong>🌟 Tips:</strong>
+      <ul>
+        <li>Visit in the evening for LED displays</li>
+        <li>Use ION+ Rewards App for points</li>
+      </ul>
+    </li><br>
+
+    <li>
+  <strong>Ngee Ann City:</strong><br>
+  <img src="assets/Ngee ann city singapore.jpg" 
+       alt="Ngee Ann City Singapore" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 391 Orchard Road, Singapore 238872<br>
+  <strong>🏬 Overview:</strong> Ngee Ann City, also known locally as **Takashimaya**, is a massive multi-level shopping complex and a cornerstone of Orchard Road’s retail scene since 1993. With a rich blend of luxury, mid-range, and local brands, it caters to every shopper's needs.<br>
+  <strong>🛒 Key Attractions:</strong>
+  <ul>
+    <li><strong>Takashimaya Department Store:</strong> One of the largest Japanese department stores in Singapore with everything from food to fashion.</li>
+    <li><strong>Luxury Brands:</strong> Chanel, Louis Vuitton, Celine, Hermès.</li>
+    <li><strong>Books Kinokuniya:</strong> The largest bookstore in Singapore — a paradise for book lovers.</li>
+    <li><strong>Beauty Hall:</strong> Multi-brand beauty counters and skincare products.</li>
+  </ul>
+  <strong>🍽️ Dining Options:</strong>
+  <ul>
+    <li>Takashimaya Food Hall (B2) with Japanese sweets, fresh sushi, and bento.</li>
+    <li>Restaurants like Crystal Jade Palace and Bangkok Jam.</li>
+    <li>Basement snack shops, cafes, and bakeries — ideal for foodies.</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> Alight at Orchard MRT Station (NS22) and take Exit D. The mall is directly connected via an underground linkway.<br>
+  <strong>🕐 Opening Hours:</strong> Daily from 10:00 AM to 9:30 PM<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Don’t miss Kinokuniya for Japanese stationery and international books.</li>
+    <li>Explore the top floors for salons and quiet cafés.</li>
+    <li>Visit during mid-year (June) or end-of-year (December) sales for the best discounts.</li>
+  </ul>
+</li><br>
+
+    <li>
+  <strong>Paragon:</strong><br>
+  <img src="assets/paragon Singapore.jpg" 
+       alt="Paragon Mall Singapore" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 290 Orchard Road, Singapore 238859<br>
+
+  <strong>🏬 Overview:</strong> Paragon is a six-level upscale shopping mall known for its elegant architecture and premium retail experience. It features a refined selection of international luxury labels, lifestyle brands, and fine dining establishments — ideal for a more relaxed and sophisticated shopping day.<br>
+
+  <strong>🛍️ What You'll Find:</strong>
+  <ul>
+    <li><strong>Luxury Brands:</strong> Gucci, Balenciaga, Givenchy, Burberry, and Jimmy Choo.</li>
+    <li><strong>Designer Kidswear:</strong> Armani Junior, Ralph Lauren Kids, and Petit Bateau.</li>
+    <li><strong>Medical & Aesthetic Clinics:</strong> Including Mount Elizabeth Medical Centre on upper floors.</li>
+    <li><strong>Lifestyle & Wellness:</strong> Fitness First Platinum and high-end spa services.</li>
+  </ul>
+
+  <strong>🍴 Dining:</strong>
+  <ul>
+    <li>Enjoy upscale cafés like Jones the Grocer, Merci Marcel, and PS.Café.</li>
+    <li>Local and Asian dining options such as Crystal Jade and Sushi Tei.</li>
+    <li>Basement food court and bakery outlets for quick bites.</li>
+  </ul>
+
+  <strong>🚇 How to Get There:</strong> Alight at Orchard MRT (NS22) and take Exit B. Paragon is a short walk from the station.<br>
+  <strong>🕐 Opening Hours:</strong> Daily from 10:00 AM to 10:00 PM<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Great place for luxury children’s fashion — not widely available elsewhere in Singapore.</li>
+    <li>Visit the upper floors for wellness centers and peaceful cafés.</li>
+    <li>Less crowded than ION during weekdays — perfect for a calm shopping experience.</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Plaza Singapura:</strong><br>
+  <img src="assets/places Singapore.jpg"
+       alt="Plaza Singapura Singapore"
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 68 Orchard Road, Singapore 238839 (directly above Dhoby Ghaut MRT interchange)<br>
+
+  <strong>🏬 Overview:</strong> Plaza Singapura is a popular one-stop shopping and lifestyle destination that attracts families, students, and tourists alike. It's known for its accessible location, diverse mix of retail stores, and relaxed vibe compared to the more upscale Orchard Road malls.<br>
+
+  <strong>🛍️ What You’ll Find:</strong>
+  <ul>
+    <li><strong>Fashion & Casual Brands:</strong> MUJI, Uniqlo, Cotton On, and Levi’s.</li>
+    <li><strong>Electronics & Lifestyle:</strong> Best Denki (electronics giant), Spotlight (crafts & textiles), and Daiso.</li>
+    <li><strong>Beauty & Wellness:</strong> The Body Shop, Watsons, and Guardian.</li>
+  </ul>
+
+  <strong>🍴 Dining Options:</strong>
+  <ul>
+    <li>Popular chains like Nando’s, Tim Ho Wan, and Genki Sushi.</li>
+    <li>Food courts and dessert stalls such as Kopitiam and Mr. Bean.</li>
+    <li>Starbucks, McDonald's, and The Soup Spoon for casual eats.</li>
+  </ul>
+
+  <strong>🎥 Entertainment:</strong>
+  <ul>
+    <li>Catch the latest films at Golden Village cinema (Level 7).</li>
+    <li>Fun and interactive spots for kids like Smigy indoor playground (selected outlets).</li>
+  </ul>
+
+  <strong>🚇 How to Get There:</strong> Take the MRT to Dhoby Ghaut Station (NS24/NE6/CC1). The mall is directly connected to the station via Basement 2.<br>
+
+  <strong>🕐 Opening Hours:</strong> Daily from 10:00 AM to 10:00 PM<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Great for family shopping and budget-friendly meals.</li>
+    <li>Use the MRT exit directly into the mall to avoid road traffic.</li>
+    <li>Go on weekdays for a quieter experience, especially in the morning.</li>
+  </ul>
+</li>
+
+  </ul>
+
+  <p>Dining is just as exciting, from hawker stalls to fine restaurants. You’ll find:</p>
+  <ul>
+    <li>Local delights like laksa and Hainanese chicken rice.</li>
+    <li>Instagram-worthy cafés with unique brews and desserts.</li>
+    <li>Upscale dining by renowned chefs and global franchises.</li>
+  </ul>
+
+  <p>
+    Entertainment is around every corner. Enjoy live music, street performances, or catch a film at Golden Village or Cathay Cineplex. December turns Orchard into a wonderland with dazzling Christmas light-ups and shopping deals.
+  </p>
+
+  <p><strong>How to Get There:</strong><br>
+    Easily accessible via MRT: Orchard, Somerset, and Dhoby Ghaut stations. You can also hop on buses or stroll along the sheltered walkways.
+  </p>
+
+  <p><strong>Nearby Attractions:</strong></p>
+  <ul>
+    <li>Emerald Hill for heritage architecture and bars</li>
+    <li>Istana (Presidential Residence)</li>
+    <li>Fort Canning Park</li>
+    <li>National Museum of Singapore</li>
+  </ul>
+
+  <p><strong>Tips for Visitors:</strong></p>
+  <ul>
+    <li>Wear comfortable shoes — you’ll be walking a lot.</li>
+    <li>Visit in the morning or late evening for a relaxed experience.</li>
+    <li>Look out for seasonal sales during June and December.</li>
+  </ul>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+<script src="Orchard_Road.js"></script>
+
+
+</body>
+</html>

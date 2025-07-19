@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>1819 – Raffles Lands | History of Singapore</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.8;
+      color: #222;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(65%);
+      z-index: 1;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 2;
+      color: white;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+      padding: 20px 30px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: 40vh;
+      }
+      header h1 {
+        font-size: 2rem;
+        padding: 15px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+        padding: 10px 15px;
+      }
+    }
+
+    nav {
+      background: #003366;
+      color: #fff;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 10px 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    section.content {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    section.content h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #003366;
+    }
+
+    section.content p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+
+    .facts {
+      background-color: #e1f5fe;
+      padding: 20px;
+      margin-top: 20px;
+      border-left: 6px solid #0288d1;
+      border-radius: 8px;
+      display: none;
+    }
+
+    button.toggle-facts {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button.toggle-facts:hover {
+      background-color: #0277bd;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      section.content {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="assets/1819 – Raffles Lands.jpg" alt="Raffles Landing">
+    <h1>1819 – Raffles Lands</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="content">
+    <h2>Arrival of Sir Stamford Raffles</h2>
+    <p>
+      On 28 January 1819, <strong>Sir Stamford Raffles</strong>, an official of the British East India Company, arrived on the shores of Singapore. He quickly recognized the strategic importance of the island, located at the southern entrance of the Malacca Strait — one of the busiest maritime trade routes in the world.
+    </p>
+
+    <p>
+      Raffles sought to establish a British trading post that could compete with the Dutch-controlled ports in the region. He met with the local Malay rulers, including <strong>Tengku Hussein Shah</strong>, who was installed as Sultan of Johor with British support. In return, the British were granted the right to set up a trading settlement in Singapore.
+    </p>
+
+    <h2>Founding the Modern City</h2>
+    <p>
+      Raffles laid out a vision for a free port with no taxes or duties, attracting merchants from across Asia and the Middle East. Within months, Singapore’s harbor bustled with ships from China, India, Europe, and the Malay Archipelago. The settlement grew rapidly, becoming a magnet for immigrants, laborers, and traders.
+    </p>
+
+    <p>
+      The British presence in Singapore marked a turning point. Raffles emphasized urban planning, creating the famous <strong>Raffles Town Plan</strong>, which divided the colony into different ethnic and functional zones. He banned slavery and promoted religious freedom — policies that made Singapore unique among colonial outposts.
+    </p>
+
+    <h2>Impact on Southeast Asia</h2>
+    <p>
+      The founding of modern Singapore disrupted Dutch dominance in the region and shifted the balance of power. It laid the foundation for the British Straits Settlements and later the Crown Colony of Singapore. The island’s population grew from a few hundred in 1819 to tens of thousands by mid-century.
+    </p>
+
+    <p>
+      Singapore’s transformation into a global trade hub began with Raffles’ landing — a historic event that shaped the economic and geopolitical future of Southeast Asia.
+    </p>
+
+    <button class="toggle-facts" onclick="toggleFacts()">Show Did You Know Facts</button>
+
+    <div class="facts" id="factsBox">
+      <h3>Did You Know?</h3>
+      <ul>
+        <li>Raffles spent only about 10 weeks in Singapore but had a lasting legacy.</li>
+        <li>He declared Singapore a free port to attract trade, unlike the heavily taxed Dutch ports.</li>
+        <li>The first treaty with local rulers was signed on 6 February 1819.</li>
+        <li>Singapore’s population grew from around 150 in 1819 to over 10,000 in a few years.</li>
+        <li>The Raffles statue at the Singapore River commemorates his landing site.</li>
+        <li>Raffles Town Plan of 1822 shaped the city’s early streets and ethnic zones.</li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="1819-Raffles_Lands.js"></script>
+    
+ 
+
+</body>
+</html>

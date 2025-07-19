@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jewel Changi Airport - Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #b0005c;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #b0005c;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: #b0005c;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+   .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0rem auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  padding-top: 45%; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.slider-nav button.active {
+  background: #b0005c;
+  opacity: 1;
+}
+
+
+@media (max-width: 1024px) {
+  .slide::before {
+    padding-top: 52%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide::before {
+    padding-top: 58%;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide::before {
+    padding-top: 64%;
+  }
+}
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .container h1 {
+      color: #b0005c;
+      font-size: 2.5rem;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      color: #444;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #8a0047;
+    }
+  </style>
+</head>
+<body>
+  
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What To Do</a></li>
+    <li><a href="index.html#dont">What Not Do</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+  <div class="container">
+    <section class="slider">
+      <div class="slide-track">
+        <div class="slide"><img src="assets/Jewel Changi Airport – Rain Vortex.jpg" alt="Jewel Vortex"></div>
+        <div class="slide"><img src="assets/Jewel Changi Airport.jpg" alt="Canopy Park"></div>
+        <div class="slide"><img src="assets/Shiseido Forest Valley.jpg" alt="Dining at Jewel"></div>
+      </div>
+      <div class="slider-nav"></div>
+    </section>
+
+    <h1 id="overview">🌟 Jewel Changi Airport</h1>
+    <p>Jewel is a lifestyle destination in Changi Airport with nature-themed attractions, shopping, dining, and the world’s tallest indoor waterfall.</p>
+
+    <h2 id="attractions">Highlights & Attractions</h2>
+    <ul>
+     <li>
+  <strong>Jewel Changi Airport – Rain Vortex:</strong><br>
+  <img src="assets/Jewel Changi Airport – Rain Vortex.jpg" 
+       alt="Jewel Rain Vortex" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 78 Airport Blvd., Singapore 819666 (Connected to Changi Airport Terminals 1, 2, and 3)<br>
+
+  <strong>💎 Overview:</strong> Jewel Changi is a world-renowned nature-themed retail and lifestyle complex. Its crown jewel — the <strong>HSBC Rain Vortex</strong> — is the world’s tallest indoor waterfall, standing at <strong>40 meters</strong> tall. It cascades down a glass dome into a lush indoor forest, offering a truly magical visual experience.<br>
+
+  <strong>🌿 Highlights:</strong>
+  <ul>
+    <li><strong>Rain Vortex:</strong> 40m tall indoor waterfall with evening light & sound shows.</li>
+    <li><strong>Shiseido Forest Valley:</strong> A tranquil indoor rainforest that surrounds the vortex.</li>
+    <li><strong>Canopy Park:</strong> Featuring Sky Nets, Mirror Maze, Hedge Maze, and Discovery Slides.</li>
+    <li><strong>Changi Experience Studio:</strong> Interactive aviation-themed digital exhibits.</li>
+  </ul>
+
+  <strong>🛍️ Retail & Dining:</strong>
+  <ul>
+    <li>Over 280 shops and restaurants — including Shake Shack, % Arabica, and Nike.</li>
+    <li>Local brands and global icons side by side in a relaxing environment.</li>
+  </ul>
+
+  <strong>🚇 How to Get There:</strong> MRT East-West Line → Changi Airport Station (CG2). Follow signs to Jewel from Terminal 1 Arrival Hall.<br>
+
+  <strong>🕐 Opening Hours:</strong>
+  <ul>
+    <li><strong>Rain Vortex:</strong> 8:00 AM – 12:30 AM (Light shows from 7:30 PM hourly)</li>
+    <li><strong>Canopy Park:</strong> 10:00 AM – 10:00 PM</li>
+    <li><strong>Retail & Dining:</strong> 10:00 AM – 10:00 PM (varies by outlet)</li>
+  </ul>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>For best photos, visit Level 2 viewing deck near the vortex.</li>
+    <li>Use the official Jewel app for maps, ticket bookings, and AR experiences.</li>
+    <li>Visit in the evening to enjoy the spectacular LED-lit waterfall shows.</li>
+  </ul>
+</li><br>
+
+      <li>
+  <strong>Shiseido Forest Valley:</strong><br>
+  <img src="assets/Shiseido Forest Valley.jpg" 
+       alt="Shiseido Forest Valley at Jewel Changi" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Inside Jewel Changi Airport (Levels 1 to 4), 78 Airport Blvd., Singapore 819666<br>
+
+  <strong>🌳 Overview:</strong> Spanning four levels, **Shiseido Forest Valley** is a lush indoor sanctuary featuring more than 900 trees and 60,000 shrubs from around the world. It surrounds the Rain Vortex and offers tranquil walking trails, cascading waterfalls, and plenty of seating spaces to rest and take in nature.<br>
+
+  <strong>🌱 Highlights:</strong>
+  <ul>
+    <li><strong>Forest Trails:</strong> Two walking trails — East Trail and West Trail — leading you through multi-level landscapes.</li>
+    <li><strong>Mist Effects:</strong> Cool mist fogs appear periodically, adding a dreamlike atmosphere.</li>
+    <li><strong>Global Plant Species:</strong> Look for exotic trees and flowering plants from South America, Africa, and Southeast Asia.</li>
+    <li><strong>Photo Spots:</strong> Perfect views of the Rain Vortex from all levels, especially at night.</li>
+  </ul>
+
+  <strong>🪑 Facilities:</strong>
+  <ul>
+    <li>Ample resting areas and benches surrounded by greenery</li>
+    <li>Elevators and escalators for easy access across levels</li>
+    <li>Wheelchair- and stroller-friendly paths</li>
+  </ul>
+
+  <strong>🚇 How to Get There:</strong> Take the MRT East-West Line to Changi Airport (CG2). Walk through Terminal 1 arrival hall into Jewel, and enter the Forest Valley via Level 1.<br>
+
+  <strong>🕐 Opening Hours:</strong> Open 24 hours (lighting and mist features operate from 7 AM to 11 PM)<br>
+
+  <strong>🎟️ Entry Fee:</strong> Free for all visitors<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Visit in the evening for magical lighting and fog effects.</li>
+    <li>Ideal for early airport arrivals or long layovers to relax before flights.</li>
+    <li>Don’t miss the aerial photo spots from Levels 2 and 4 for Rain Vortex views.</li>
+  </ul>
+</li><br>
+
+     <li>
+  <strong>Canopy Park:</strong><br>
+  <img src="assets/Canopy Park.jpg" 
+       alt="Canopy Park at Jewel Changi" 
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Level 5, Jewel Changi Airport, 78 Airport Blvd., Singapore 819666<br>
+
+  <strong>🎢 Overview:</strong> Located at the top level of Jewel, **Canopy Park** is a 14,000 sqm recreational wonderland filled with whimsical gardens, play attractions, and family-friendly fun. It’s perfect for all ages — whether you’re here for thrilling slides or peaceful walks among floral displays.<br>
+
+  <strong>🎠 Attractions:</strong>
+  <ul>
+    <li><strong>Discovery Slides:</strong> Art meets play in this sculptural playscape of slides and viewing decks.</li>
+    <li><strong>Hedge Maze:</strong> Singapore’s largest indoor hedge maze with a watchtower viewpoint.</li>
+    <li><strong>Mirror Maze:</strong> A kaleidoscopic experience with reflections and light effects.</li>
+    <li><strong>Sky Nets:</strong> Bouncing and walking nets suspended above ground — thrilling and safe for kids and adults.</li>
+    <li><strong>Foggy Bowls:</strong> Shallow play areas filled with mist — popular with children.</li>
+  </ul>
+
+  <strong>🌼 Gardens:</strong>
+  <ul>
+    <li><strong>Petal Garden:</strong> Seasonal flower displays that change throughout the year.</li>
+    <li><strong>Topiary Walk:</strong> Walk among fun animal-shaped plant sculptures for cute photo ops.</li>
+  </ul>
+
+  <strong>🚇 How to Get There:</strong> Take MRT to Changi Airport (CG2) → Walk through Terminal 1 → Access Jewel Level 5 via escalator or lift<br>
+
+  <strong>🕐 Opening Hours:</strong> 10:00 AM – 10:00 PM daily<br>
+
+  <strong>🎟️ Entry Fee:</strong> Paid entry; tickets available online or at Jewel ticketing counters. Prices vary by attraction or bundle.<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Book tickets online to avoid queues and get discounts.</li>
+    <li>Wear socks if visiting Sky Nets – it's required.</li>
+    <li>Evening visits offer fewer crowds and stunning lighting for photos.</li>
+  </ul>
+</li><br>
+
+    </ul>
+
+    <h2 id="dining">Dining</h2>
+    <ul>
+      <li>Burger & Lobster, Shake Shack, A&W</li>
+      <li>Local favorites at Five Spice Food Court</li>
+    </ul>
+
+    <h2>📍 Location</h2>
+    <p>78 Airport Blvd, Singapore 819666 – Connected to Terminals 1–3</p>
+
+    <h2 id="tips">Visitor Tips</h2>
+    <ul>
+      <li>Visit in the evening to catch light shows</li>
+      <li>Book canopy attractions in advance</li>
+      <li>Plenty of seating and charging stations for travelers</li>
+    </ul>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <script src="jewel_changi_Airport.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Night Safari – Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    
+    *,*::before,*::after{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+    :root{
+      --brand:#b0005c;
+      --bg:#fffaf8;
+      --text:#333;
+      --radius:10px;
+      --shadow:0 2px 10px rgba(0,0,0,.12);
+      font-size:clamp(15px,1vw,18px);
+    }
+
+    body{
+      font-family:'Segoe UI',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }  
+
+    
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#fff;
+      padding:.75rem 1.25rem;
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:var(--brand);
+    }  
+
+    .nav-links{
+      display:flex;
+      gap:1.25rem;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:500;
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:var(--brand);
+    }  
+    .menu-icon{
+      display:none;
+      font-size:1.7rem;
+      cursor:pointer;
+      color:var(--brand);
+    }  
+
+    @media(max-width:768px){
+      .nav-links{
+        flex-direction:column;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:100%;
+        background:#fff;
+        padding:1rem;
+        display:none;
+        gap:1rem;
+        box-shadow:var(--shadow);
+      }  
+      .nav-links.show{
+        display:flex;
+      }
+      .menu-icon{
+        display:block;
+      }
+    }
+
+    
+   .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0rem auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  padding-top: 45%; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.slider-nav button.active {
+  background: #b0005c;
+  opacity: 1;
+}
+
+
+@media (max-width: 1024px) {
+  .slide::before {
+    padding-top: 52%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide::before {
+    padding-top: 58%;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide::before {
+    padding-top: 64%;
+  }
+}
+
+
+    
+    .container{
+      max-width:1100px;
+      margin:2.5rem auto;
+      padding:0 1.25rem;
+      line-height:1.7;
+    }
+
+    .container img{
+      width:100%;
+      max-height:500px;
+      object-fit:cover;
+      border-radius:var(--radius);
+    }  
+
+    .container h1{
+      color:var(--brand);
+      margin:2rem 0 1rem;
+      font-size:2.5rem;
+    }
+
+    .container h2{
+      color:var(--brand);
+      margin:2rem 0 1rem;
+    }
+
+    ul{
+      padding-left:1.25rem;
+      margin-top:.5rem;
+    }
+
+    .back-btn{
+      display:inline-block;
+      margin:2rem 0;padding:.65rem 1.25rem;
+      background:var(--brand);color:#fff;
+      border-radius:var(--radius);
+      text-decoration:none;
+    }
+
+    .back-btn:hover{
+      background:#8a0047;
+    }
+
+  </style>
+</head>
+<body>
+ 
+  <nav>
+    <div class="logo">Withlocals SG</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#do">What To Do</a></li>
+      <li><a href="index.html#dont">What Not Do </a></li>
+      <li><a href="Contact.html">Contact</a></li>
+     
+    </ul>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </nav>
+<div class="container">
+ 
+  <section class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="assets/Night Safari Singapore.jpg" alt="Night Safari Tram"></div>
+      <div class="slide"><img src="assets/Tram Safari Journey.jpg" alt="Leopard Trail"></div>
+      <div class="slide"><img src="assets/Walking Trails.jpg" alt="Creatures of the Night Show"></div>
+    </div>
+    <div class="slider-nav"></div>
+  </section>
+
+ 
+    <h1 id="overview">🌙 Night Safari Singapore</h1>
+    <p>The <strong>Night Safari</strong> is the world’s first nocturnal wildlife park, offering an after‑dark adventure through six geographical zones. Board the guided tram or explore walking trails to see over 900 animals — from elusive leopards to majestic Asian elephants — in their nighttime habitats.</p>
+
+    <h2 id="highlights">Highlights</h2>
+    <ul>
+     <li>
+  <strong>Tram Safari Journey:</strong><br>
+  <img src="assets/Tram Safari Journey.jpg" alt="Tram Safari Journey" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Night Safari, 80 Mandai Lake Road, Singapore 729826<br>
+  <strong>🚋 Overview:</strong> The Tram Safari Journey is the signature experience of Night Safari, offering a guided ride through 7 geographical zones of the world. Visitors can spot free-roaming animals under soft moonlight and listen to live commentary.<br>
+  <strong>🦁 What You’ll See:</strong>
+  <ul>
+    <li>Himalayan Tahr and Bharal on rugged terrain</li>
+    <li>Malayan Tapirs and Asian Elephants</li>
+    <li>Spotted Hyenas and Striped Hyenas</li>
+    <li>Lions, Bongos, and Indian Gaur</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to Khatib Station (NS14), then take Mandai Khatib Shuttle or bus 138<br>
+  <strong>🕐 Operating Hours:</strong> Daily from 7:15 PM – 12:00 AM (last entry 11:15 PM)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Go early for the first tram ride to avoid queues</li>
+    <li>Don’t use flash photography — it disturbs animals</li>
+    <li>Use the live commentary to learn fun animal facts</li>
+  </ul>
+</li>
+<br>
+     <li>
+  <strong>Walking Trails:</strong><br>
+  <img src="assets/Walking Trails.jpg" alt="Night Safari Walking Trails" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Night Safari, 80 Mandai Lake Road, Singapore 729826<br>
+  <strong>🌳 Overview:</strong> In addition to the tram ride, Night Safari features four immersive walking trails that bring you even closer to nocturnal wildlife in lush, naturalistic settings.<br>
+  <strong>🦉 Key Trails:</strong>
+  <ul>
+    <li><strong>Leopard Trail:</strong> Spot stealthy leopards, clouded leopards, and flying squirrels in action.</li>
+    <li><strong>Fishing Cat Trail:</strong> Watch fishing cats hunt and marvel at wetland creatures like otters and civets.</li>
+    <li><strong>East Lodge Trail:</strong> Encounter Malayan tigers and red river hogs.</li>
+    <li><strong>Wallaby Trail:</strong> Stroll through an Australian habitat with wallabies hopping freely.</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to Khatib (NS14), then Mandai Khatib Shuttle or Bus 138<br>
+  <strong>🕐 Trail Hours:</strong> Daily from 7:15 PM to 12:00 AM (last entry: 11:15 PM)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Bring quiet shoes – some animals are nearby and easily startled.</li>
+    <li>Stay silent and look carefully – many creatures are camouflaged.</li>
+    <li>Great for photography lovers – low-light trail lighting creates a magical ambiance.</li>
+  </ul>
+</li><br>
+
+      <li>
+  <strong>Creatures of the Night Show:</strong><br>
+  <img src="assets/Creatures of the Night Show.jpg" alt="Creatures of the Night Show" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Amphitheatre, Night Safari, 80 Mandai Lake Road, Singapore 729826<br>
+  <strong>🎭 Overview:</strong> The "Creatures of the Night" is a 25-minute interactive show that spotlights the unique behaviors and talents of nocturnal animals. Hosted by experienced keepers, the show features live demonstrations and unexpected animal appearances.<br>
+  <strong>🦝 What You’ll See:</strong>
+  <ul>
+    <li>Otters showing off their recycling skills</li>
+    <li>Raccoons and binturongs in clever routines</li>
+    <li>Spotted hyenas crushing bones with powerful jaws</li>
+    <li>Snakes, owls, and civets up close with audience interaction</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to Khatib (NS14), then Mandai Khatib Shuttle or Bus 138<br>
+  <strong>🕐 Showtimes:</strong> Daily at 7:30 PM, 8:30 PM, and 9:30 PM (subject to weather)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Arrive 15–20 minutes early for good seats—it's free seating and fills up fast.</li>
+    <li>No flash photography—respect the animals' comfort.</li>
+    <li>Sit near the front for possible interaction with the animals!</li>
+  </ul>
+</li><br>
+
+      <li>
+  <strong>Thumbuakar Fire Show:</strong><br>
+  <img src="assets/The-Thumbuakar-Fire-Show.jpg" alt="Thumbuakar Fire Show Night Safari" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Entrance Courtyard, Night Safari, 80 Mandai Lake Road, Singapore 729826<br>
+  <strong>🔥 Overview:</strong> The Thumbuakar Fire Show is a thrilling prelude to the Night Safari adventure, performed by a group of talented fire dancers. This high-energy tribal performance combines flame-spitting, acrobatics, and rhythmic drumming to create a jaw-dropping experience.<br>
+  <strong>🎪 What to Expect:</strong>
+  <ul>
+    <li>Fire-breathing and flame juggling</li>
+    <li>Tribal warrior-themed choreography and music</li>
+    <li>Energetic group routines and crowd interaction</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to Khatib (NS14), then take Mandai Khatib Shuttle or Bus 138<br>
+  <strong>🕐 Showtimes:</strong> Daily at 6:45 PM, 8:00 PM, and 9:00 PM (each show is ~7 minutes)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Catch this before entering the park—it happens just outside the ticket gate.</li>
+    <li>Great for photo ops—just remember to turn off your flash.</li>
+    <li>Best viewing spot is center stage near the courtyard benches.</li>
+  </ul>
+</li>
+
+    </ul>
+
+  
+
+    <h2 id="dining">Dining Options</h2>
+    <ul>
+      <li><strong>Ulu Ulu Safari Restaurant:</strong> Asian buffet and local delights in a rustic kampong setting.</li>
+      <li><strong>Chang Chawang "Thai Street Food":</strong> Quick bites like pad Thai and mango sticky rice.</li>
+      <li><strong>New Zealand Natural:</strong> Ice cream and smoothies for a sweet treat post‑tour.</li>
+    </ul>
+
+    <h2>📍 Location & How to Get There</h2>
+    <p><strong>Address:</strong> 80 Mandai Lake Road, Singapore 729826 (next to Singapore Zoo). From the city, take MRT to <em>Khatib</em> (NS14) then Mandai Khatib Shuttle (15 min). Or bus 927/138 to the zoo complex.</p>
+
+    <h2>🕐 Opening Hours</h2>
+    <p>7:15 PM – 12:00 AM daily (last entry 11:15 PM). Tram queues close 11:00 PM.</p>
+
+    <h2 id="tips">Visitor Tips</h2>
+    <ul>
+      <li>Buy e‑tickets in advance for timed entry slots.</li>
+      <li>Arrive before 7 PM to catch the first fire show and avoid long tram queues.</li>
+      <li>No flash photography — it startles the animals.</li>
+      <li>Wear comfortable walking shoes and carry insect repellent.</li>
+    </ul>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+</div>
+
+  
+  <script src="Night_Safari.js"></script>
+</body>
+</html>

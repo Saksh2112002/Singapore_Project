@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gardens by the Bay - Singapore</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+   
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #b0005c;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #b0005c;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #b0005c;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0rem auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  padding-top: 45%; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.slider-nav button.active {
+  background: #b0005c;
+  opacity: 1;
+}
+
+
+@media (max-width: 1024px) {
+  .slide::before {
+    padding-top: 52%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide::before {
+    padding-top: 58%;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide::before {
+    padding-top: 64%;
+  }
+}
+
+
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .container h1 {
+      color: #b0005c;
+      font-size: 2.5rem;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      color: #444;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #8a0047;
+    }
+
+    @media (max-width: 768px) {
+      .container h1 {
+        font-size: 1.8rem;
+      }
+
+      
+    }
+  </style>
+</head>
+<body>
+
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    
+    <li><a href="index.html#do">What To Do</a></li>
+    <li><a href="index.html#dont">What Not Do</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+<div class="container">
+  <section class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="assets/garden by the bay image.jpg" alt="Supertree Grove"></div>
+    <div class="slide"><img src="assets/cloud forest of singapore.jpg" alt="Flower Dome"></div>
+    <div class="slide"><img src="assets/flower dome of singapore.jpg" alt="Cloud Forest"></div>
+  </div>
+  <div class="slider-nav"></div>
+</section>
+
+
+  <h1>🌺 Gardens by the Bay</h1>
+
+  <p>
+    Gardens by the Bay is a national garden and premier horticultural attraction in the heart of Singapore. Spanning 101 hectares, it showcases the best of garden artistry, environmental sustainability, and futuristic design. The attraction features a vibrant fusion of nature and cutting-edge technology, with dramatic waterfront gardens, giant vertical gardens, cooled conservatories, and evening light shows.
+  </p>
+
+  <p>
+    The Supertree Grove — towering vertical gardens ranging from 25 to 50 meters — has become a globally recognized symbol of Singapore’s innovation. These structures collect solar power, act as air exhausts for the conservatories, and support a diverse range of plant species.
+  </p>
+
+  <p>
+    The Flower Dome and Cloud Forest are cooled conservatories that provide immersive experiences:
+    <ul><br>
+      <li>
+
+  <strong>Flower Dome:</strong><br>
+  <img src="assets/flower dome of singapore.jpg"
+       alt="Flower Dome Singapore"
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 18 Marina Gardens Drive, Singapore 018953<br>
+
+  <strong>🏞️ Overview:</strong> The Flower Dome is one of two cooled conservatories at Gardens by the Bay. It holds the Guinness World Record as the largest glass greenhouse in the world. It showcases exotic plants from five continents in spectacularly themed gardens under climate-controlled conditions mimicking the Mediterranean.<br>
+
+  <strong>🌼 Highlights:</strong>
+  <ul>
+    <li><strong>Seasonal Floral Displays:</strong> Ever-changing exhibits like Tulipmania, Sakura Matsuri, and Christmas Wonderland.</li>
+    <li><strong>Baobabs & Succulents:</strong> Unique arid zone plants from Africa and Madagascar.</li>
+    <li><strong>Olive Grove & Mediterranean Garden:</strong> Featuring olive trees, lavender, and rosemary.</li>
+  </ul>
+
+  <strong>🎟️ Ticket Info:</strong>
+  <ul>
+    <li>Part of the Gardens by the Bay conservatory admission (combo with Cloud Forest).</li>
+    <li>Discounts for Singapore residents, seniors, and children.</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong> Daily from 9:00 AM to 9:00 PM (last admission 8:00 PM)<br>
+
+  <strong>🚇 How to Get There:</strong> Bayfront MRT (CE1/DT16), Exit B. Walk through the underground linkway and cross the Dragonfly Bridge.<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Visit early morning for fewer crowds and better lighting for photos.</li>
+    <li>Bring a light jacket — the dome can feel chilly!</li>
+    <li>Don’t miss the Flower Field — it's always beautifully themed and Insta-worthy.</li>
+  </ul>
+</li> <br>
+
+     <li>
+  <strong>Cloud Forest:</strong><br>
+  <img src="assets/cloud forest of singapore.jpg"
+       alt="Cloud Forest Singapore"
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 18 Marina Gardens Drive, Singapore 018953 (Beside Flower Dome)<br>
+
+  <strong>🏞️ Overview:</strong> Cloud Forest is one of the two cooled conservatories at Gardens by the Bay. It's home to the **world’s tallest indoor waterfall** (35 meters) and a lush mountain landscape enveloped in mist. The dome replicates the cool-moist conditions of tropical highlands up to 2,000 meters above sea level.<br>
+
+  <strong>🌿 Key Features:</strong>
+  <ul>
+    <li><strong>Cloud Mountain:</strong> A man-made structure blanketed with orchids, ferns, and bromeliads — accessed by elevator and spiraling walkways.</li>
+    <li><strong>Waterfall:</strong> The iconic indoor waterfall greets you at the entrance with a refreshing mist and photo ops.</li>
+    <li><strong>Crystal Mountain:</strong> Displays on geology and stalactites inside a cool cave-like area.</li>
+    <li><strong>Lost World:</strong> Garden at the top representing tropical cloud forest vegetation.</li>
+  </ul>
+
+  <strong>🎟️ Ticket Info:</strong>
+  <ul>
+    <li>Requires conservatory ticket (combo with Flower Dome).</li>
+    <li>Free for children under 3. Discounts for locals and seniors.</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong> Daily from 9:00 AM to 9:00 PM (last admission at 8:00 PM)<br>
+
+  <strong>🚇 How to Get There:</strong> Bayfront MRT (CE1/DT16), Exit B. Follow signs to Gardens by the Bay via Dragonfly Bridge.<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>It’s colder than the Flower Dome — bring a light jacket!</li>
+    <li>Best visited after sunset for the Cloud Forest Light Show (on selected days).</li>
+    <li>Use the elevator to start at the top and walk your way down for a better experience.</li>
+  </ul>
+</li>
+
+    </ul>
+  </p>
+
+  <p>
+    In the evenings, don't miss the Garden Rhapsody – a magical light and music show held daily at the Supertree Grove. The combination of music, synchronized lighting, and ambient sounds creates a mesmerizing experience under the stars.
+  </p>
+
+  <p>
+    Families will enjoy the Far East Organization Children’s Garden, featuring water play zones, tree houses, and interactive educational programs.
+  </p>
+
+  <p>
+    <strong>Opening Hours:</strong><br>
+    Outdoor Gardens: 5:00 AM – 2:00 AM<br>
+    Flower Dome & Cloud Forest: 9:00 AM – 9:00 PM (Last admission: 8:00 PM)
+  </p>
+
+  <p>
+    <strong>Entry Fees:</strong><br>
+    Outdoor Gardens: Free<br>
+    Conservatories: SGD 28 (Adult), SGD 15 (Child, 3–12 years)
+  </p>
+
+  <p>
+    <strong>Location:</strong><br>
+    18 Marina Gardens Dr, Singapore 018953
+  </p>
+
+  <p>
+    <strong>Nearby Attractions:</strong>
+    <ul>
+      <li>Marina Bay Sands SkyPark</li>
+      <li>ArtScience Museum</li>
+      <li>Singapore Flyer</li>
+      <li>Helix Bridge & Marina Promenade</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Tips for Visitors:</strong>
+    <ul>
+      <li>Visit early morning or late evening to avoid peak heat.</li>
+      <li>Book tickets online to skip queues.</li>
+      <li>Check the Garden Rhapsody schedule in advance.</li>
+      <li>Wear comfortable shoes – the gardens are vast!</li>
+    </ul>
+  </p>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+<script src="garden_by_the_bay.js"></script>
+
+</body>
+</html>

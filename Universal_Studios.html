@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Universal Studios Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #b0005c;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #b0005c;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: #b0005c;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+    .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0rem auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  padding-top: 45%; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.slider-nav button.active {
+  background: #b0005c;
+  opacity: 1;
+}
+
+
+@media (max-width: 1024px) {
+  .slide::before {
+    padding-top: 52%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide::before {
+    padding-top: 58%;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide::before {
+    padding-top: 64%;
+  }
+}
+
+
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .container h1 {
+      color: #b0005c;
+      font-size: 2.5rem;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      color: #444;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #8a0047;
+    }
+  </style>
+</head>
+<body>
+
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What to Do</a></li>
+    <li><a href="index.html#dont">What Not to Do</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+<div class="container">
+   <section class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="assets/universal Studio Rides.jpg" alt="Universal Studio"></div>
+    <div class="slide"><img src="assets/Hollywood.jpg" alt="Hollywood (Universal Studio Singapore)"></div>
+    <div class="slide"><img src="assets/N.jpg" alt="New York (Universal Studios Singapore)"></div>
+  </div>
+  <div class="slider-nav"></div>
+</section>
+
+  <h1>🎢 Universal Studios Singapore</h1>
+
+  <p>
+    Located on Sentosa Island, Universal Studios Singapore is Southeast Asia’s first and only Universal Studios theme park. It offers thrilling rides, world-class entertainment, and movie-themed attractions suitable for visitors of all ages.
+  </p>
+
+  <p>Explore 7 themed zones filled with fun and fantasy:</p>
+
+  <ul>
+    <li>
+  <strong>Hollywood (Universal Studios Singapore):</strong><br>
+  <img src="assets/Hollywood.jpg" alt="Hollywood Zone USS" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Universal Studios Singapore, Sentosa Island<br>
+  <strong>🌇 Overview:</strong> The Hollywood zone is the main entrance to Universal Studios Singapore and is designed like a glamorous 1970s Hollywood Boulevard with palm trees, art deco architecture, and a vibrant atmosphere.<br>
+  <strong>🙌 What You’ll Find:</strong>
+  <ul>
+    <li>Character Meet-and-Greets: Minions, Marilyn Monroe, Woody Woodpecker</li>
+    <li>Live Entertainment: Hollywood Dreams Parade, street dance acts</li>
+    <li>Shopping: Universal Studios Store, Minion Mart</li>
+    <li>Dining: Mel's Drive-In (classic American diner), Starbucks</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to HarbourFront → Sentosa Express → Waterfront Station → Walk to USS entrance<br>
+  <strong>🕒 Opening Hours:</strong> Typically 11 AM – 6 PM (may vary by season)<br>
+  <strong>✨ Tips:</strong>
+  <ul>
+    <li>Catch street shows in the afternoon for great photo ops</li>
+    <li>Shop for souvenirs early to avoid queues later</li>
+    <li>Use the USS app to check showtimes and character locations</li>
+  </ul>
+</li><br>
+
+    <li>
+  <strong>New York (Universal Studios Singapore):</strong><br>
+  <img src="assets/N.jpg" alt="New York Zone USS" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Universal Studios Singapore, Sentosa Island<br>
+  <strong>🌆 Overview:</strong> The New York zone captures the essence of the Big Apple with its classic brownstone buildings, neon signs, and movie-set style streets. It’s a hub for special effects, interactive exhibits, and street performances.<br>
+  <strong>📺 What You’ll Find:</strong>
+  <ul>
+    <li>Lights, Camera, Action! Hosted by Steven Spielberg – a thrilling soundstage show</li>
+    <li>Sesame Street Spaghetti Space Chase – family-friendly indoor ride</li>
+    <li>Street performances and photo spots with characters like Elmo & Cookie Monster</li>
+    <li>Themed eateries and gift shops with NYC-style food and merch</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to HarbourFront → Sentosa Express → Waterfront Station → Walk to USS entrance<br>
+  <strong>🕒 Opening Hours:</strong> Typically 11 AM – 6 PM (may vary by season)<br>
+  <strong>✨ Tips:</strong>
+  <ul>
+    <li>Don’t miss the special effects show — a highlight for movie buffs</li>
+    <li>Great zone for younger kids and families</li>
+    <li>Visit early as this zone gets crowded by midday</li>
+  </ul>
+</li><br>
+
+    <li>
+  <strong>Sci-Fi City (Universal Studios Singapore):</strong><br>
+  <img src="assets/Sci-Fi City.jpg" alt="Sci-Fi City USS" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Universal Studios Singapore, Sentosa Island<br>
+  <strong>🚀 Overview:</strong> Sci-Fi City offers an adrenaline-pumping futuristic experience with cutting-edge rides and a high-tech urban setting. It is the most thrilling zone in the park, perfect for adventure seekers.<br>
+  <strong>🎢 What You’ll Find:</strong>
+  <ul>
+    <li><strong>TRANSFORMERS The Ride:</strong> A 3D battle simulation ride with high-speed motion effects</li>
+    <li><strong>Battlestar Galactica:</strong> The world’s tallest pair of dueling roller coasters (Human & Cylon)</li>
+    <li>Accelerator – spinning ride for families and kids</li>
+    <li>Transformer character meet-and-greets (Optimus Prime, Bumblebee)</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to HarbourFront → Sentosa Express → Waterfront Station → Walk to USS entrance<br>
+  <strong>🕒 Opening Hours:</strong> Typically 11 AM – 6 PM (subject to change)<br>
+  <strong>✨ Tips:</strong>
+  <ul>
+    <li>Use Universal Express Pass to skip the Transformers ride queue</li>
+    <li>Store loose items in lockers before roller coaster rides</li>
+    <li>Ideal zone for thrill seekers and fans of sci-fi films</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Ancient Egypt (Universal Studios Singapore):</strong><br>
+  <img src="assets/Ancient Egypt.jpg" alt="Ancient Egypt Zone USS" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Universal Studios Singapore, Sentosa Island<br>
+  <strong>🔲 Overview:</strong> Step back in time to the land of pharaohs, pyramids, and ancient secrets. Ancient Egypt immerses guests in a world inspired by 1930s archaeological expeditions with grand sculptures and desert backdrops.<br>
+  <strong>🚪 What You’ll Find:</strong>
+  <ul>
+    <li><strong>Revenge of the Mummy:</strong> A high-speed indoor roller coaster with special effects and dark turns</li>
+    <li><strong>Treasure Hunters:</strong> A slow jeep ride perfect for kids and families</li>
+    <li>Egyptian-style statues and photo spots</li>
+    <li>Ancient-themed snack stalls and souvenir shops</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to HarbourFront → Sentosa Express → Waterfront Station → Walk to USS entrance<br>
+  <strong>🕒 Opening Hours:</strong> Typically 11 AM – 6 PM (subject to change)<br>
+  <strong>✨ Tips:</strong>
+  <ul>
+    <li>"Revenge of the Mummy" is one of the top-rated rides—don’t miss it!</li>
+    <li>Perfect place for dramatic photos with statues and pyramids</li>
+    <li>Use the Express Pass for faster access to rides</li>
+  </ul>
+</li><br>
+
+    <li>
+  <strong>The Lost World (Universal Studios Singapore):</strong><br>
+  <img src="assets/the lost world.jpg" alt="The Lost World Zone USS" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Universal Studios Singapore, Sentosa Island<br>
+  <strong>🌍 Overview:</strong> The Lost World zone brings the excitement of dinosaurs and prehistoric adventure to life with attractions inspired by Jurassic Park. It features two main areas: Jurassic Park and WaterWorld.<br>
+  <strong>🎢 What You’ll Find:</strong>
+  <ul>
+    <li><strong>Jurassic Park Rapids Adventure:</strong> A thrilling river raft ride through dinosaur territory (you will get wet!)</li>
+    <li><strong>Canopy Flyer:</strong> A suspended coaster with bird's-eye views of the jungle</li>
+    <li><strong>Dino-Soarin’:</strong> A fun ride where kids can control flying dinosaurs</li>
+    <li><strong>WaterWorld:</strong> Live stunt show with explosions, jet skis, and water effects</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to HarbourFront → Sentosa Express → Waterfront Station → Walk to USS entrance<br>
+  <strong>🕒 Opening Hours:</strong> Typically 11 AM – 6 PM (subject to change)<br>
+  <strong>✨ Tips:</strong>
+  <ul>
+    <li>Bring a poncho or change of clothes for the water rides</li>
+    <li>Arrive early for the WaterWorld show to grab center seats</li>
+    <li>Use lockers for storing bags before riding the rapids</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Far Far Away (Universal Studios Singapore):</strong><br>
+  <img src="assets/far far Away.jpg" alt="Far Far Away Zone USS" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Universal Studios Singapore, Sentosa Island<br>
+  <strong>📺 Overview:</strong> Step into the enchanted kingdom from DreamWorks' Shrek universe. This whimsical zone is home to fairy tale castles, ogres, and talking donkeys — perfect for families and fans of animation.<br>
+  <strong>🧳 What You’ll Find:</strong>
+  <ul>
+    <li><strong>Shrek 4-D Adventure:</strong> A 4D cinematic experience with moving seats and special effects</li>
+    <li><strong>Enchanted Airways:</strong> A junior roller coaster ride around the castle</li>
+    <li><strong>Magic Potion Spin:</strong> A Ferris-wheel style ride for kids inside Fairy Godmother’s Potion Shop</li>
+    <li>Meet-and-greets with Shrek, Fiona, Puss in Boots, and Donkey</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to HarbourFront → Sentosa Express → Waterfront Station → Walk to USS entrance<br>
+  <strong>🕒 Opening Hours:</strong> Typically 11 AM – 6 PM (subject to change)<br>
+  <strong>✨ Tips:</strong>
+  <ul>
+    <li>Shrek 4D is a great break from the heat and fun for all ages</li>
+    <li>Perfect zone for younger kids and family photos with characters</li>
+    <li>Arrive early for character meet-and-greets</li>
+  </ul>
+</li><br>
+
+    <li>
+  <strong>Madagascar (Universal Studios Singapore):</strong><br>
+  <img src="assets/Madagascar.jpg" alt="Madagascar Zone USS" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Universal Studios Singapore, Sentosa Island<br>
+  <strong>🌿 Overview:</strong> Based on DreamWorks Animation's Madagascar films, this lush tropical zone is ideal for younger children and fans of the movie. The environment features vibrant jungle settings and beloved characters.<br>
+  <strong>🌟 What You’ll Find:</strong>
+  <ul>
+    <li><strong>Madagascar: A Crate Adventure:</strong> A gentle indoor boat ride through key scenes from the movie</li>
+    <li><strong>King Julien’s Beach Party-Go-Round:</strong> A fun and colorful carousel with Madagascar characters</li>
+    <li>Photo ops with Alex the Lion, Gloria, Marty, and Melman</li>
+    <li>Themed snack carts and souvenirs</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT to HarbourFront → Sentosa Express → Waterfront Station → Walk to USS entrance<br>
+  <strong>🕒 Opening Hours:</strong> Typically 11 AM – 6 PM (subject to change)<br>
+  <strong>✨ Tips:</strong>
+  <ul>
+    <li>Ideal for toddlers and families looking for relaxed rides</li>
+    <li>Use this area as a calm break from intense attractions</li>
+    <li>Arrive early for shorter queues at the boat ride</li>
+  </ul>
+</li><br>
+
+  </ul>
+
+  <p><strong>🎭 Shows & Experiences:</strong></p>
+  <ul>
+    <li>WaterWorld stunt show</li>
+    <li>Street parades and character meet-and-greets</li>
+    <li>Special effects and live-action performances</li>
+  </ul>
+
+  <p><strong>🍔 Dining & Shopping:</strong></p>
+  <ul>
+    <li>Movie-themed restaurants like Mel’s Drive-In and Goldilocks Chicken</li>
+    <li>Shops with souvenirs, movie memorabilia, and apparel</li>
+  </ul>
+
+  <p><strong>🚇 How to Get There:</strong><br>
+    Take the MRT to HarbourFront Station (NE1/CC29), then transfer to the Sentosa Express to Waterfront Station. Universal Studios is a short walk from there.
+  </p>
+
+  <p><strong>🕐 Opening Hours:</strong><br>
+    Typically 11:00 AM – 6:00 PM (hours may vary by season — check official site).
+  </p>
+
+  <p><strong>🎟️ Tickets:</strong><br>
+    Standard Day Pass: SGD $79 (Adults), SGD $59 (Children 4–12). Discounts available online or for locals.
+  </p>
+
+  <p><strong>🌟 Tips for Visitors:</strong></p>
+  <ul>
+    <li>Buy tickets online to skip the queue.</li>
+    <li>Download the USS mobile app for real-time showtimes and maps.</li>
+    <li>Go early or on weekdays to avoid peak crowds.</li>
+    <li>Bring a poncho or extra clothes for water rides.</li>
+  </ul>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+
+<script src="Universal_Studios.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinatown Walk - Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #b0005c;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #b0005c;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #b0005c;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+
+
+.slider {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-nav button.active {
+  background-color: #e91e63;
+}
+
+
+@media (max-width: 768px) {
+  .slide img {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide img {
+    max-height: 180px;
+  }
+
+  .slider-nav button {
+    height: 8px;
+    width: 8px;
+    margin: 0 4px;
+  }
+}
+
+  
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .container h1 {
+      color: #b0005c;
+      font-size: 2.5rem;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      color: #444;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #8a0047;
+    }
+
+    @media (max-width: 768px) {
+      .container h1 {
+        font-size: 1.8rem;
+      }
+
+     
+    }
+  </style>
+</head>
+<body>
+
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What to Do</a></li>
+    <li><a href="index.html#dont">What Not to Do</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+<div class="container">
+ <section class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="assets/chinatown heritage centre image.jpg" alt="Chinatown Street"></div>
+    <div class="slide"><img src="assets/BangkokChinatownChineseTempleGuidedWalkingTour.jpg" alt="Pagoda Street"></div>
+    <div class="slide"><img src="assets/maxwell food centre of singapore.jpg" alt="Chinatown Market"></div>
+  </div>
+  <div class="slider-nav"></div>
+</section>
+
+
+  <h1>🏮 Chinatown Walk</h1>
+
+  <p>
+    Chinatown in Singapore is a vibrant district that blends rich cultural heritage with modern attractions. Walking through its bustling streets is like stepping into a lively mix of the old and new — with temples, markets, street food, and art hidden in every corner.
+  </p>
+
+  <p>
+    From the iconic red lanterns strung above the streets to the ornate architecture of historic temples, Chinatown offers an immersive experience filled with tradition, flavor, and charm.
+  </p>
+
+  <p>
+    <strong>Highlights of the Chinatown Walk:</strong>
+    <ul><br>
+     <li>
+  <strong>Chinatown Heritage Centre:</strong><br>
+  <img src="assets/chinatown heritage centre image.jpg"
+       alt="Chinatown Heritage Centre Singapore"
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 48 Pagoda Street, Singapore 059207<br>
+
+  <strong>🏛️ Overview:</strong> Located in the heart of Chinatown, the Chinatown Heritage Centre is a beautifully restored set of shophouses offering immersive insight into the lives of early Chinese immigrants in Singapore. Visitors walk through realistic scenes of 1950s tenement homes, complete with authentic furnishings and sounds.<br>
+
+  <strong>🎯 Highlights:</strong>
+  <ul>
+    <li><strong>Life-sized Setups:</strong> Walk through recreated bedrooms, kitchens, and workspaces from Singapore’s past.</li>
+    <li><strong>Stories of Early Settlers:</strong> Hear personal tales of hardship and hope through audio-visual exhibits.</li>
+    <li><strong>Heritage Exhibits:</strong> View traditional tools, costumes, letters, and photographs of early Chinatown life.</li>
+  </ul>
+
+  <strong>🎟️ Ticket Info:</strong>
+  <ul>
+    <li>Admission ranges from SGD 10–18 depending on age and nationality.</li>
+    <li>Discounts available for students, seniors, and group bookings.</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong> Daily from 9:30 AM to 6:30 PM (last entry 5:30 PM)<br>
+
+  <strong>🚇 How to Get There:</strong> Take the MRT to Chinatown Station (NE4/DT19), Exit A. Walk 1 minute to Pagoda Street.<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Allocate at least 1–1.5 hours to explore all the exhibits fully.</li>
+    <li>Photography is allowed but no flash — keep your camera ready for vintage scenes.</li>
+    <li>Combine with a walking tour of nearby temples and food streets for a full Chinatown experience.</li>
+  </ul>
+</li><br>
+
+     <li>
+  <strong>Maxwell Food Centre:</strong><br>
+  <img src="assets/maxwell food centre of singapore.jpg"
+       alt="Maxwell Food Centre Singapore"
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 1 Kadayanallur Street, Singapore 069184<br>
+
+  <strong>🍜 Overview:</strong> Maxwell Food Centre is one of Singapore’s most iconic hawker centres. Nestled in Chinatown, it offers a wide variety of affordable and authentic local dishes in a no-frills, nostalgic setting. The centre is loved by both locals and tourists for its vibrant atmosphere and unbeatable flavors.<br>
+
+  <strong>🌟 Famous Stalls & Must-Try Dishes:</strong>
+  <ul>
+    <li><strong>Tian Tian Hainanese Chicken Rice:</strong> Singapore’s most famous chicken rice, endorsed by Anthony Bourdain and Gordon Ramsay.</li>
+    <li><strong>Zhen Zhen Porridge:</strong> Comforting Cantonese-style porridge with century egg and shredded chicken.</li>
+    <li><strong>China Street Fritters:</strong> Traditional Hokkien-style ngoh hiang (meat rolls) and yam cakes.</li>
+    <li><strong>Maxwell Fuzhou Oyster Cake:</strong> Rare, deep-fried oyster cakes packed with peanuts, coriander, and minced meat.</li>
+  </ul>
+
+  <strong>💰 Price Range:</strong>
+  <ul>
+    <li>Most dishes cost between SGD 3–6.</li>
+    <li>Cash and SGQR mobile payments are accepted at many stalls.</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong>
+  <ul>
+    <li>Open daily from 8:00 AM to 10:00 PM (varies by stall)</li>
+    <li>Best time to visit: 11:00 AM to 2:00 PM (lunch peak)</li>
+  </ul>
+
+  <strong>🚇 How to Get There:</strong>
+  <p>Take the MRT to Tanjong Pagar Station (EW15), Exit G. Walk about 8 minutes via Maxwell Road. It's also a short walk from Chinatown MRT (NE4/DT19).</p>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Go early to beat the lunch crowd, especially at Tian Tian stall.</li>
+    <li>Bring cash — not all stalls accept cards or mobile payment.</li>
+    <li>Look for stalls with long queues — always a good sign of quality!</li>
+    <li>Try local drinks like sugarcane juice, iced barley, or kopi (local coffee).</li>
+  </ul>
+</li><br>
+
+      <li>
+  <strong>Buddha Tooth Relic Temple:</strong><br>
+  <img src="assets/Buddha tooth relic temple and museum of singapore.jpg"
+       alt="Buddha Tooth Relic Temple Singapore"
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 288 South Bridge Road, Singapore 058840<br>
+
+  <strong>🛕 Overview:</strong> The Buddha Tooth Relic Temple is a majestic four-story temple located in the heart of Chinatown. Completed in 2007, it is designed in the Tang Dynasty architectural style and houses what is believed to be a tooth relic of the historical Buddha. It’s not just a place of worship but also a museum, cultural center, and stunning architectural marvel.<br>
+
+  <strong>🔍 Highlights:</strong>
+  <ul>
+    <li><strong>Sacred Tooth Relic:</strong> Housed in a gold stupa in the Sacred Light Hall on the fourth floor (viewable by the public).</li>
+    <li><strong>Ornate Main Hall:</strong> With thousands of Buddha statues, golden carvings, and spiritual ambiance.</li>
+    <li><strong>Museum:</strong> Buddhist artifacts, ancient texts, and statues from across Asia.</li>
+    <li><strong>Rooftop Garden:</strong> A peaceful space featuring a large prayer wheel and a view of the temple’s exterior rooftop design.</li>
+  </ul>
+
+  <strong>🎟️ Entry Fee:</strong>
+  <ul>
+    <li>Free entry for all visitors.</li>
+    <li>Donations are welcome at designated boxes inside the temple.</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong>
+  <ul>
+    <li>Temple: 7:00 AM – 7:00 PM daily</li>
+    <li>Museum: 9:00 AM – 5:00 PM (Closed on Mondays)</li>
+  </ul>
+
+  <strong>🚇 How to Get There:</strong>
+  <p>Take the MRT to Chinatown Station (NE4/DT19), Exit A. The temple is a 3-minute walk along South Bridge Road.</p>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Dress modestly (shoulders and knees covered) as it's a religious site.</li>
+    <li>Photography is allowed, but flash and loud behavior are discouraged.</li>
+    <li>Visit the rooftop for quiet reflection and to spin the prayer wheel.</li>
+    <li>Don’t miss the free vegetarian meals sometimes served on special Buddhist holidays.</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Sri Mariamman Temple:</strong><br>
+  <img src="assets/Sri Mariamman Temple of singapore.jpg"
+       alt="Sri Mariamman Temple Singapore"
+       style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 244 South Bridge Road, Singapore 058793<br>
+
+  <strong>🛕 Overview:</strong> The Sri Mariamman Temple is Singapore’s oldest Hindu temple, founded in 1827. Dedicated to the goddess Mariamman—protector against diseases—it serves as an important place of worship for Tamil Hindus and is a national monument. The temple’s vivid gopuram (tower) is covered with intricately painted sculptures of Hindu deities, making it one of Chinatown’s most photographed landmarks.<br>
+
+  <strong>🔍 Highlights:</strong>
+  <ul>
+    <li><strong>Gopuram Tower:</strong> Towering entrance adorned with colorful Hindu deities and mythological figures.</li>
+    <li><strong>Main Shrine:</strong> Devoted to Mariamman, with smaller shrines for other gods like Ganesh and Durga.</li>
+    <li><strong>Cultural Role:</strong> Site of major Hindu festivals like Theemithi (Fire Walking Ceremony).</li>
+  </ul>
+
+  <strong>🎟️ Entry Fee:</strong>
+  <ul>
+    <li>Free entry for all visitors.</li>
+    <li>Small donation encouraged for photography inside (approx. SGD 3–5).</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong>
+  <ul>
+    <li>Daily from 7:00 AM – 12:00 PM & 6:00 PM – 9:00 PM</li>
+  </ul>
+
+  <strong>🚇 How to Get There:</strong>
+  <p>Take the MRT to Chinatown Station (NE4/DT19), Exit A. The temple is a short 2-minute walk along South Bridge Road.</p>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Remove your shoes before entering the temple complex.</li>
+    <li>Dress respectfully – avoid sleeveless tops or short shorts.</li>
+    <li>Don’t miss the detailed frescoes and ceiling carvings inside.</li>
+    <li>Visit in the evening during puja (prayer) for a spiritual experience.</li>
+  </ul>
+</li>
+ 
+    </ul>
+  </p>
+
+  <p>
+    As you stroll down Pagoda Street and Temple Street, you'll find local souvenir shops, traditional Chinese medicine stores, calligraphy stalls, and heritage murals that tell the story of Chinatown’s evolution.
+  </p>
+
+  <p>
+    <strong>Nearby Attractions:</strong>
+    <ul>
+      <li>Telok Ayer Street and its shophouses</li>
+      <li>Ann Siang Hill and Club Street nightlife</li>
+      <li>Thian Hock Keng Temple</li>
+      <li>Chinatown Complex Market & Food Centre</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Best Time to Visit:</strong><br>
+    Evenings are ideal when lanterns are lit and the market buzzes with life. During Chinese New Year, Chinatown transforms into a festive paradise with decorations, stage shows, and cultural performances.
+  </p>
+
+  <p>
+    <strong>How to Get There:</strong><br>
+    Take the MRT to Chinatown Station (NE4/DT19). The district is walkable and full of photo-worthy spots, so wear comfortable shoes!
+  </p>
+
+  <p>
+    <strong>Tips for Visitors:</strong>
+    <ul>
+      <li>Bring cash for small food stalls and shops.</li>
+      <li>Try traditional snacks like bak kwa and pineapple tarts.</li>
+      <li>Respect temple dress codes — cover shoulders and knees.</li>
+      <li>Visit the Chinatown Street Market for local crafts.</li>
+    </ul>
+  </p>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+<script src="chinatown_walk.js"></script>
+
+</body>
+</html>

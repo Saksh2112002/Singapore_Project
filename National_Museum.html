@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National Museum - Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #b0005c;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #b0005c;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: #b0005c;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0rem auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  padding-top: 45%; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.slider-nav button.active {
+  background: #b0005c;
+  opacity: 1;
+}
+
+
+@media (max-width: 1024px) {
+  .slide::before {
+    padding-top: 52%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide::before {
+    padding-top: 58%;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide::before {
+    padding-top: 64%;
+  }
+}
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container h1 {
+      color: #b0005c;
+      font-size: 2.5rem;
+    }
+
+    .container p {
+      line-height: 1.8;
+      color: #444;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #8a0047;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What to Do</a></li>
+    <li><a href="index.html#dont">What Not to Do</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="container">
+  <section class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="assets/National Museum of Singapore.jpg" alt="National Museum"></div>
+      <div class="slide"><img src="assets/Life in Singapore Galleries.jpg" alt="Museum Interior"></div>
+      <div class="slide"><img src="assets/Singapore History Gallery.jpg" alt="Exhibition Gallery"></div>
+    </div>
+    <div class="slider-nav"></div>
+  </section>
+
+  <h1>🏛️ National Museum of Singapore</h1>
+
+  <p>
+    The National Museum of Singapore is the oldest museum in the country, first established in 1887. It’s a cultural and historical landmark, showcasing Singapore’s journey from past to present through engaging exhibits and immersive galleries.
+  </p>
+
+  <p><strong>📍 Location:</strong> 93 Stamford Road, Singapore 178897</p>
+  <p><strong>🕐 Opening Hours:</strong> Daily from 10:00 AM to 7:00 PM (last admission 6:30 PM)</p>
+
+  <p><strong>🎟️ Admission:</strong></p>
+  <ul>
+    <li>Free for Singaporeans & Permanent Residents</li>
+    <li>$15 for Adults (Standard ticket)</li>
+    <li>$10 for Students & Seniors</li>
+  </ul>
+
+  <p><strong>🖼️ Highlights:</strong></p>
+  <ul>
+    <li>
+  <strong>Singapore History Gallery:</strong><br>
+  <img src="assets/Singapore History Gallery.jpg" alt="Singapore History Gallery" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Level 1, National Museum of Singapore, 93 Stamford Road, Singapore 178897<br>
+  <strong>🏛️ Overview:</strong> This flagship gallery offers a fascinating journey through Singapore’s history, from its 14th-century origins to independence and modern success.<br>
+
+  <strong>🖼️ Key Highlights:</strong>
+  <ul>
+    <li>Artifacts from ancient Singapore (Temasek era)</li>
+    <li>British colonial rule and World War II exhibits</li>
+    <li>Multimedia and immersive storytelling experiences</li>
+    <li>Sections on the Japanese Occupation and Independence</li>
+  </ul>
+
+  <strong>🎧 Interactive Features:</strong>
+  <ul>
+    <li>Touchscreen panels and digital timelines</li>
+    <li>Free audio guide via the National Museum app</li>
+    <li>Augmented reality views of historical events</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong> 10:00 AM – 7:00 PM daily (last entry at 6:30 PM)<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Start your museum visit here for historical context</li>
+    <li>Allow 60–90 minutes for a full walkthrough</li>
+    <li>Photography is allowed without flash</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Life in Singapore Galleries:</strong><br>
+  <img src="assets/Life in Singapore Galleries.jpg" alt="Life in Singapore Gallery" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Level 2, National Museum of Singapore, 93 Stamford Road, Singapore 178897<br>
+  <strong>🏙️ Overview:</strong> The Life in Singapore Galleries explore everyday living from the late 1800s to the modern era, showcasing how Singaporeans have worked, played, and celebrated through the decades.<br>
+
+  <strong>🖼️ Key Themes:</strong>
+  <ul>
+    <li>Early migration and multicultural communities</li>
+    <li>Domestic life in kampongs and HDB flats</li>
+    <li>Singapore’s street food, trades, and childhood pastimes</li>
+    <li>Music, fashion, and entertainment from the '50s to today</li>
+  </ul>
+
+  <strong>🧠 Experience & Interaction:</strong>
+  <ul>
+    <li>Replica kitchens, salons, and coffee shops from different eras</li>
+    <li>Interactive audio stations and video clips</li>
+    <li>Nostalgic items like old toys, radios, and furniture</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong> 10:00 AM – 7:00 PM daily (last admission 6:30 PM)<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Perfect for visitors interested in Singapore's cultural identity</li>
+    <li>Great for families and older generations — lots of nostalgia</li>
+    <li>Check for special photo booths and storytelling events</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Glass Rotunda: Story of the Forest</strong><br>
+  <img src="assets/Glass Rotunda  Story of the Forest.jpg" alt="Glass Rotunda Singapore" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Level 2, National Museum of Singapore, 93 Stamford Road, Singapore 178897<br>
+  <strong>🏞️ Overview:</strong> The Glass Rotunda is a stunning immersive installation that blends art, nature, and technology. It houses **“Story of the Forest,”** a digital interpretation of the museum’s historic natural history drawings, brought to life by Japanese art collective teamLab.<br>
+
+  <strong>🌳 What You'll Experience:</strong>
+  <ul>
+    <li>Enter a dark tunnel that opens up into a 360° dome of animated rainforest</li>
+    <li>Spot over 60 species of flora and fauna as they move and react around you</li>
+    <li>See digital animals leap across walls, trees sway, and the weather shift in real time</li>
+  </ul>
+
+  <strong>📸 Highlights:</strong>
+  <ul>
+    <li>Perfect photo spot with magical visuals and ambient music</li>
+    <li>Great for both kids and adults — it's educational and immersive</li>
+    <li>Use the museum’s AR app to scan and learn more about each species</li>
+  </ul>
+
+  <strong>🕐 Opening Hours:</strong> 10:00 AM – 7:00 PM (last admission at 6:15 PM)<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Visit early or late for smaller crowds and better photo opportunities</li>
+    <li>Don’t rush through — take your time to observe subtle animations</li>
+    <li>Perfect ending after the “Life in Singapore” galleries</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Interactive Exhibits & Family Zones</strong><br>
+  <img src="assets/Interactive Exhibits & Family Zones.jpg" alt="Interactive Family Zone at National Museum" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Various galleries & Basement Level, National Museum of Singapore<br>
+  <strong>🧒 Overview:</strong> Perfect for families traveling with kids, the museum offers hands-on exhibits, engaging play areas, and family-friendly activities designed to make learning history fun.<br>
+
+  <strong>🎮 What You’ll Find:</strong>
+  <ul>
+    <li><strong>Interactive Touchscreens:</strong> Dive into digital storytelling and explore historical artifacts through games and videos.</li>
+    <li><strong>Storytelling Sessions:</strong> Live and recorded sessions in cozy corners with cushions and props for younger visitors.</li>
+    <li><strong>DIY Stations:</strong> Creative craft booths where children can make bookmarks, sketches, or postcards inspired by history.</li>
+  </ul>
+
+  <strong>🧩 Family Zones & Kids Areas:</strong>
+  <ul>
+    <li><strong>“Play @ NMS”:</strong> A vibrant, colorful space for imaginative play, role-play exhibits, and sensory games.</li>
+    <li><strong>Reading Nooks:</strong> With books, beanbags, and museum-themed puzzles.</li>
+    <li><strong>Photo Booths:</strong> Dress up in period costumes and take family portraits with historic Singapore backdrops.</li>
+  </ul>
+
+  <strong>🎟️ Admission:</strong> Included with general entry. Some workshops may require advance registration.<br>
+  <strong>🕐 Recommended Time:</strong> 1–2 hours for family-focused exploration<br>
+
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Plan your visit around workshop timings listed at the museum info desk.</li>
+    <li>Bring a camera — the kids' zones are adorable and colorful!</li>
+    <li>Best time to visit: weekday mornings for fewer crowds.</li>
+  </ul>
+</li><br>
+
+  </ul>
+
+  <p><strong>🚇 How to Get There:</strong><br>
+    MRT: Bras Basah (Circle Line, CC2) or Dhoby Ghaut (NS24/NE6/CC1) – a 5-minute walk.
+  </p>
+
+  <p><strong>☕ Nearby Spots:</strong></p>
+  <ul>
+    <li>Fort Canning Park for a relaxing stroll</li>
+    <li>SMU & Singapore Art Museum (SAM)</li>
+    <li>National Library & Food Junction nearby</li>
+  </ul>
+
+  <p><strong>🌟 Tips:</strong></p>
+  <ul>
+    <li>Use the museum’s mobile app for interactive guides</li>
+    <li>Visit in the morning to avoid crowds</li>
+    <li>Check out temporary exhibitions and night festivals</li>
+  </ul>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+
+<script src="National_Museum.js"></script>
+</body>
+</html>

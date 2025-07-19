@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marina Bay Sands - Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf8;
+    }
+
+  
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #b0005c;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #b0005c;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #b0005c;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+
+  
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto 2.5rem auto; 
+}
+
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  position: relative;
+  min-height: 250px; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  transition: opacity 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.slider-nav button.active {
+  opacity: 1;
+  background-color: #b0005c;
+}
+
+.slider-nav button:focus-visible {
+  outline: 2px solid #b0005c;
+}
+
+
+@media (min-width: 1024px) {
+  .slide {
+    aspect-ratio: auto;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 1023px) {
+  .slide {
+    aspect-ratio: auto;
+    height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide {
+    aspect-ratio: auto;
+    height: 45vh;
+  }
+  .slider-nav button {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .slide {
+    aspect-ratio: auto;
+    height: 40vh;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .container h1 {
+      color: #b0005c;
+      font-size: 2.5rem;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      color: #444;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #8a0047;
+    }
+
+    @media (max-width: 768px) {
+      .container h1 {
+        font-size: 1.8rem;
+      }
+
+     
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What to Do</a></li>
+    <li><a href="index.html#dont">What Not to Do</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+
+<div class="container">
+ 
+<section class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="assets/marina-bay-sands..jpg" alt="Marina Bay Sands View 1"></div>
+    <div class="slide"><img src="assets/Sands-Skypark-Observation-Deck_1920x1234.jpg" alt="Marina Bay Sands View 2"></div>
+    <div class="slide"><img src="assets/infinity-pool-video-thumb-edited-1.jpg" alt="Marina Bay Sands View 3"></div>
+    <div class="slide"><img src="assets/The-Shoppes-at-Marina-Bay-Sands.jpg" alt="Marina Bay Sands View 4"></div>
+  </div>
+  <div class="slider-nav"></div>
+</section>
+
+
+  <h1>🏙️ Marina Bay Sands</h1>
+
+  <p>
+    Marina Bay Sands is Singapore's most iconic integrated resort and a modern marvel that defines the city’s skyline. With its three soaring towers topped by the world-famous SkyPark, it offers luxurious experiences in hospitality, shopping, dining, and entertainment.
+  </p>
+
+  <p>
+    The architectural masterpiece stands out with its unique design and is home to over 2,500 hotel rooms, a rooftop infinity pool, a massive shopping mall, and the ArtScience Museum. It’s a must-visit destination, even if you're not staying at the hotel.
+  </p>
+
+  <p>
+    <strong>Top Attractions at Marina Bay Sands:</strong>
+    <ul>
+      <li>
+  <strong>SkyPark Observation Deck:</strong><br>
+  <img src="assets/Sands-Skypark-Observation-Deck_1920x1234.jpg" alt="SkyPark Observation Deck" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Marina Bay Sands, 10 Bayfront Avenue, Singapore 018956<br>
+  <strong>🏙️ Overview:</strong> Located atop Marina Bay Sands, the SkyPark Observation Deck offers breathtaking 360-degree views of the Singapore skyline, Gardens by the Bay, and the busy harbor.<br>
+  <strong>🎡 What You’ll See:</strong>
+  <ul>
+    <li>Iconic skyline and Marina Bay views</li>
+    <li>Bird’s-eye view of Gardens by the Bay and the Singapore Flyer</li>
+    <li>Panoramic photo opportunities day and night</li>
+    <li>Infinity pool access for hotel guests only</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Circle Line or Downtown Line → Bayfront Station (CE1/DT16), Exit B<br>
+  <strong>🕐 Opening Hours:</strong> 11 AM – 9 PM daily<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Visit at sunset for the best views and golden hour photos</li>
+    <li>Book tickets online in advance to avoid long queues</li>
+    <li>Bring a wide-angle camera for panoramic shots</li>
+  </ul>
+</li><br>
+
+      <li>
+  <strong>Infinity Pool:</strong><br>
+  <img src="assets/infinity-pool-video-thumb-edited-1.jpg" alt="Infinity Pool Marina Bay Sands" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Marina Bay Sands, 10 Bayfront Avenue, Singapore 018956 (Level 57, Hotel Tower 3)<br>
+  <strong>🏙️ Overview:</strong> The world-famous rooftop Infinity Pool at Marina Bay Sands is the highest and longest elevated pool globally, offering spectacular views of the Singapore skyline.<br>
+  <strong>🌊 What You’ll Experience:</strong>
+  <ul>
+    <li>Swim along the 150-meter infinity edge</li>
+    <li>Uninterrupted skyline and sunset views</li>
+    <li>Luxury cabanas and poolside service</li>
+    <li>Access to the pool deck bar and restaurants</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Circle Line or Downtown Line → Bayfront Station (CE1/DT16), Exit B<br>
+  <strong>🕐 Opening Hours:</strong> 6 AM – 11 PM daily (hotel guests only)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Only accessible to hotel guests—book a stay for access</li>
+    <li>Go early morning or sunset for fewer crowds and better views</li>
+    <li>Don’t forget your camera—it’s one of the most Instagrammed spots in the world!</li>
+  </ul>
+</li><br>
+  
+      <li>
+  <strong>The Shoppes at Marina Bay Sands:</strong><br>
+  <img src="assets/The-Shoppes-at-Marina-Bay-Sands.jpg" alt="The Shoppes at Marina Bay Sands" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 10 Bayfront Avenue, Singapore 018956 (Within Marina Bay Sands Complex)<br>
+  <strong>🏙️ Overview:</strong> The Shoppes is Singapore’s most iconic luxury shopping mall, known for its elegant architecture, canal rides, and premium boutiques.<br>
+  <strong>🛍️ What You’ll Find:</strong>
+  <ul>
+    <li>Designer Labels: Chanel, Cartier, Hermes, Bvlgari</li>
+    <li>High-Street Brands: Sephora, Charles & Keith</li>
+    <li>Entertainment: Sampan boat rides, Digital Light Canvas</li>
+    <li>Fine Dining: CUT by Wolfgang Puck, Waku Ghin, and celebrity restaurants</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Circle Line or Downtown Line → Bayfront Station (CE1/DT16), Exit C or D<br>
+  <strong>🕐 Opening Hours:</strong> 10:30 AM – 11 PM (Sun–Thu), till 11:30 PM (Fri–Sat)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Take a Sampan boat ride through the indoor canal</li>
+    <li>Visit at night for stunning reflections and light shows</li>
+    <li>Look out for occasional fashion and art installations</li>
+  </ul>
+</li><br>
+ 
+      <li>
+  <strong>ArtScience Museum:</strong><br>
+  <img src="assets/Artscience Museum of singapore.avif" alt="ArtScience Museum Singapore" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 6 Bayfront Avenue, Singapore 018974 (Next to Marina Bay Sands)<br>
+  <strong>🏙️ Overview:</strong> Shaped like a lotus flower, the ArtScience Museum blends art, science, culture, and technology in stunning exhibitions designed to inspire all ages.<br>
+  <strong>🧠 What You’ll Explore:</strong>
+  <ul>
+    <li><strong>Future World:</strong> An interactive digital universe created by teamLab</li>
+    <li><strong>Rotating Exhibits:</strong> From Van Gogh to Marvel Studios and space explorations</li>
+    <li>Hands-on activities for kids and families</li>
+    <li>Stunning photo zones with immersive light displays</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Circle Line or Downtown Line → Bayfront Station (CE1/DT16), Exit D<br>
+  <strong>🕐 Opening Hours:</strong> 10 AM – 7 PM daily (last admission at 6 PM)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Book online for discounted combo tickets with Future World</li>
+    <li>Visit on weekdays for fewer crowds</li>
+    <li>Ideal for families, creatives, and science lovers alike</li>
+  </ul>
+</li><br>
+
+     <li>
+  <strong>Spectra – Light & Water Show:</strong><br>
+  <img src="assets/spectra-video-thumb.jpg" alt="Spectra Light and Water Show" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Event Plaza, Marina Bay Sands, 2 Bayfront Avenue, Singapore 018972<br>
+  <strong>🏙️ Overview:</strong> Spectra is a stunning outdoor light and water show that blends visual storytelling, dancing fountains, colorful lasers, and music—all against the Marina Bay skyline.<br>
+  <strong>🌈 What You’ll Experience:</strong>
+  <ul>
+    <li>15-minute multimedia extravaganza with water projections</li>
+    <li>State-of-the-art lasers and colorful visual effects</li>
+    <li>Beautiful symphonic soundtrack</li>
+    <li>Panoramic night views of the city</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Circle Line or Downtown Line → Bayfront Station (CE1/DT16), Exit B or D<br>
+  <strong>🕐 Showtimes:</strong>  
+  <ul>
+    <li>Sunday – Thursday: 8 PM & 9 PM</li>
+    <li>Friday & Saturday: 8 PM, 9 PM & 10 PM</li>
+  </ul>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Arrive early for the best waterfront seating at Event Plaza</li>
+    <li>Great spot for night photography</li>
+    <li>Free to watch – no ticket required!</li>
+  </ul>
+</li><br>
+ 
+    </ul>
+  </p>
+
+  <p>
+    Marina Bay Sands also hosts world-class performances at its theatre and offers access to the Marina Bay waterfront for scenic strolls, photography, and events.
+  </p>
+
+  <p>
+    <strong>Location:</strong><br>
+    10 Bayfront Ave, Singapore 018956
+  </p>
+
+  <p>
+    <strong>How to Get There:</strong><br>
+    Take the MRT to Bayfront Station (CE1/DT16), which is directly connected to the resort. Alternatively, enjoy a walk along the Helix Bridge from Esplanade or the Merlion Park.
+  </p>
+
+  <p>
+    <strong>Nearby Attractions:</strong>
+    <ul>
+      <li>Gardens by the Bay</li>
+      <li>Helix Bridge</li>
+      <li>Merlion Park</li>
+      <li>Singapore Flyer</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Tips for Visitors:</strong>
+    <ul>
+      <li>Visit the SkyPark at sunset for the best skyline photos.</li>
+      <li>Book tickets online in advance for the ArtScience Museum or observation deck.</li>
+      <li>Evenings are ideal for enjoying the light show and waterfront ambiance.</li>
+      <li>Dress smart if you plan to dine in celebrity restaurants inside.</li>
+    </ul>
+  </p>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+<script src="Marina_Bay_Sands.js"></script>
+
+
+</body>
+</html>

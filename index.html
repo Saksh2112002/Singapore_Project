@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <title>What to Do & Not Do in Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="wave-bg"></div>
+
+ <!-- Navigation -->
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li class="dropdown">
+    <a href="#">Attractions <i class="ri-arrow-down-s-line"></i></a>
+    <div class="dropdown-menu">
+      <a href="Marina_Bay_Sands.html" target="_blank">Marina Bay Sands SkyPark</a>
+      <a href="Gardens_by_the_bay.html" target="_blank">Gardens by the Bay</a>
+      <a href="Jewel.html" target="_blank">Jewel Changi Airport</a>
+      <a href="Night_Safari.html" target="_blank">Night Safari</a>
+      <a href="Universal_Studios.html" target="_blank">Universal Studios Singapore</a>
+      <a href="Singapore_flyer.html" target="_blank">Singapore Flyer</a>
+      <a href="Sentosa_Island.html" target="_blank">Sentosa Island</a>
+      <a href="National_Museum.html" target="_blank">National Museum</a>
+      <a href="Botanic_Gardens_(UNESCO).html" target="_blank">Botanic Gardens (UNESCO)</a>
+      <a href="Singapore_Zoo.html" target="_blank">Singapore Zoo</a>
+    </div>
+  </li>
+
+  
+  <li class="dropdown">
+    <a href="#">Stay / Hotels <i class="ri-arrow-down-s-line"></i></a>
+    <div class="dropdown-menu">
+      <strong class="menu-heading">Luxury</strong>
+      <a href="Marina_Bay_Sands_Hotel.html" target="_blank">Marina Bay Sands Hotel</a>
+      <a href="Raffles_Hotel.html" target="_blank">Raffles Hotel</a>
+      <a href="The_Fullerton_Hotel.html" target="_blank">The Fullerton</a>
+      <a href="Capella_Singapore.html" target="_blank">Capella Singapore</a>
+      <hr>
+      <strong class="menu-heading">Budget</strong>
+      <a href="Hotel_Boss.html" target="_blank">Hotel Boss</a>
+      <a href="Ibis_Bencoolen.html" target="_blank">Ibis Bencoolen</a>
+      <a href="The_Pod_Capsule_Hotel.html" target="_blank">The Pod Capsule Hotel</a>
+      <a href="Hotel_81_Chinatown.html" target="_blank">Hotel 81 Chinatown</a>
+    </div>
+  </li>
+
+  
+  <li class="dropdown">
+    <a href="#">History <i class="ri-arrow-down-s-line"></i></a>
+    <div class="dropdown-menu">
+      <strong class="menu-heading">Milestones</strong>
+      <a href="1299-Temasek_founded_history.html" target="_blank">1299 — Temasek founded</a>
+      <a href="1819-Raffles_Lands.html" target="_blank">1819 — Raffles lands</a>
+      <a href="1942-Fall_of_Singapore.html" target="_blank">1942 — Fall of Singapore</a>
+      <a href="1965-Independence_of_Singapore.html" target="_blank">1965 — Independence</a>
+      <a href="2015-SG50_Jubilee.html" target="_blank">2015 — SG50 Jubilee</a>
+    </div>
+  </li>
+
+    <li><a href="#do">What to Do</a></li>
+    <li><a href="#dont">What Not to Do</a></li>
+
+    
+    <li><a href="#" id="loginBtn">Login</a></li>
+    <li><a href="#" id="signupBtn">Signup</a></li>
+
+    
+    <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
+
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+ 
+<!-- ===== Login Modal (hidden until JS adds .show) ===== -->
+
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-box">
+    <span class="close-btn" id="closeModal">&times;</span>
+
+    <h2>Login</h2>
+<form id="loginForm" novalidate>
+  <label class="field">
+    <input type="email" id="email" placeholder="Email">
+    <small class="err" id="emailErr"></small>
+  </label><br>
+
+  <label class="field">
+    <input type="password" id="password" placeholder="Password">
+    <small class="err" id="pwdErr"></small>
+  </label><br>
+
+  <button type="submit" id="loginBtnSubmit">Login</button>
+ 
+
+</form>
+
+
+  </div>
+</div>
+
+
+
+<!-- SIGNUP MODAL -->
+<div id="signupModal" class="modal-overlay">
+  <div class="modal-box">
+    <span class="close-btn" id="closeSignup">&times;</span>
+    <h2>Sign Up</h2>
+    <form id="signupForm" novalidate>
+
+      
+      <label class="field">
+        <input type="text" id="regUsername" placeholder="Username">
+        <small class="err" id="regUsernameErr"></small>
+      </label>
+
+    
+      <label class="field">
+        <input type="tel" id="regMobile" placeholder="Mobile Number">
+        <small class="err" id="regMobileErr"></small>
+      </label>
+
+     
+      <label class="field">
+        <input type="email" id="regEmail" placeholder="Email">
+        <small class="err" id="regEmailErr"></small>
+      </label>
+
+     
+      <label class="field">
+        <input type="password" id="regPwd" placeholder="Password">
+        <small class="err" id="regPwdErr"></small>
+      </label>
+
+      
+      <label class="field">
+        <input type="password" id="regPwd2" placeholder="Confirm Password">
+        <small class="err" id="regPwd2Err"></small>
+      </label>
+
+      
+     
+<button type="submit" id="signupBtnSubmit">Sign Up</button>
+
+
+
+
+    </form>
+  </div>
+</div>
+
+ <section class="welcome-section">
+  <div class="welcome-text">
+    <h1>Welcome to Singapore!</h1>
+    <p>Discover what you should and shouldn't do while exploring this amazing city.</p>
+    <a href="#do" class="btn">Explore Now</a>
+  </div>
+  <div class="welcome-image">
+    <img src="assets/singapore.jpg" alt="Singapore_img">
+  </div>
+</section>
+
+
+  
+  <section class="content-section" id="do">
+    <h2>✅ What to Do in Singapore</h2>
+
+    <div class="About_heading" id="about-heading">
+      <div class="destinations-container">
+        
+        <div class="card">
+          <div class="first_Destination">
+            <img src="assets/garden by the bay.jpg" alt="Gardens by the Bay">
+          </div>
+          <div class="infor">
+            <h5>🌺 Gardens by the Bay</h5>
+            <p class="text">Futuristic trees, Cloud Forest & light shows.</p>
+            <button class="rating"><i class="ri-star-s-fill"></i>4.5</button>
+          <a href="Gardens_by_the_bay.html">Read more -></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="Second_destination">
+            <img src="assets/orchard road.jpg" alt="Orchard Road">
+          </div>
+          <div class="infor">
+            <h5>🛍️ Orchard Road</h5>
+            <p>High-end shopping and modern malls.</p>
+            <button class="rating"><i class="ri-star-s-fill"></i>4.4</button>
+            <a href="Orchard_Road.html">Read more -></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="third_destination">
+            <img src="assets/secret of chinatown.jpg" alt="Chinatown Walk">
+          </div>
+          <div class="infor">
+            <h5>🚶 Chinatown Walk</h5>
+            <p>Culture, temples, and amazing food stalls.</p>
+            <button class="rating"><i class="ri-star-s-fill"></i>4.5</button>
+            <a href="Chinatown_Walk.html">Read more -></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="Second_destination">
+            <img src="assets/marina-bay-sands..jpg" alt="Marina Bay Sands">
+          </div>
+          <div class="infor">
+            <h5>🎡 Marina Bay Sands</h5>
+            <p>SkyPark, infinity pool, and city views.</p>
+            <button class="rating"><i class="ri-star-s-fill"></i>4.4</button>
+              <a href="Marina_Bay_Sands.html">Read more -></a>
+          </div>
+        </div>
+
+       <div class="card">
+        <div class="Second_destination">
+          <img src="assets/universal Studio Rides.jpg" alt="Universal Studios Singapore">
+        </div>
+       <div class="infor">
+         <h5>🎬 Universal Studios</h5>
+         <p>Theme park rides, shows, and movie magic.</p>
+         <button class="rating"><i class="ri-star-s-fill"></i>4.6</button>
+          <a href="Universal_Studios.html">Read more -></a>
+        </div>
+        </div>
+
+<div class="card">
+  <div class="Second_destination">
+    <img src="assets/Wild-Wild-Wet-Review of singapore .jpg" alt="Wild Wild Wet Singapore">
+  </div>
+  <div class="infor">
+    <h5>💦 Wild Wild Wet Resort</h5>
+    <p>One of Singapore's largest water parks.</p>
+    <button class="rating"><i class="ri-star-s-fill"></i> 4.3</button>
+    <a href="wild_wild_wet_Resort.html">Read more →</a>
+  </div>
+</div>
+
+
+    
+
+      </div> 
+    </div> 
+  </section>
+
+
+<section class="simple-video" id="video_singapore">
+  <video controls autoplay muted loop playsinline>
+    <source src="assets/Tour_Singapore.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+
+
+
+ <section class="testimonials" id="dont">
+    <h2>What Not to Do in Singapore</h2>
+    <p class="subheading">
+      Stay respectful, stay informed — avoid these common mistakes when visiting Singapore.
+    </p>
+
+    <div class="testimonial-slider">
+      <div class="testimonial-card active">
+        <div class="stars">🚫</div>
+        <p>Do not litter, spit, or forget to flush in public. These are strictly enforced.</p>
+        <div class="profile">
+          <img src="assets/no littering logo.jpg" alt="Cleanliness Law" />
+          <div>
+            <h4>No Littering</h4>
+            <span>Public Cleanliness Rule</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">🍬</div>
+        <p>Chewing gum is restricted. Don’t bring or use it unless medically approved.</p>
+        <div class="profile">
+          <img src="assets/Gum chewing import Restriction logo.jpg" alt="Gum Ban" />
+          <div>
+            <h4>No Gum Chewing</h4>
+            <span>Import Restriction</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">🚷</div>
+        <p>Jaywalking is illegal. Always cross roads at pedestrian crossings.</p>
+        <div class="profile">
+          <img src="assets/Don’t Jaywalk Traffic law of Singapore.jpg" alt="Jaywalking" />
+          <div>
+            <h4>Don’t Jaywalk</h4>
+            <span>Traffic Law</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">🚉</div>
+        <p>Eating or drinking on MRT trains and stations is not allowed.</p>
+        <div class="profile">
+          <img src="assets/No Eating in MRT singapore.jpg" alt="No Eating MRT" />
+          <div>
+            <h4>No Eating in MRT</h4>
+            <span>Public Transit Rule</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">🚭</div>
+        <p>Smoking in public areas like malls and parks is prohibited.</p>
+        <div class="profile">
+          <img src="assets/No Smoking logo.jpg" alt="No Smoking" />
+          <div>
+            <h4>No Smoking</h4>
+            <span>Smoke Zones Only</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">💊</div>
+        <p>Drug laws are extremely strict — possession or trafficking can mean the death penalty.</p>
+        <div class="profile">
+          <img src="assets/no-drugs.jpg" alt="Drug Laws" />
+          <div>
+            <h4>No Drugs</h4>
+            <span>Zero Tolerance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-controls">
+  <button id="prevBtn">◀</button>
+  <button id="nextBtn">▶</button>
+</div>
+
+  </section>
+
+ <section class="guide-slider-section" id="guides">
+  <h2 class="section-title">🧭 Guides of Singapore</h2>
+  <div class="guide-slider">
+    <div class="guide-card">
+      <img src="assets/tour guide jane goh .jph.png" alt="Guide 1">
+      <h3>Jane Goh</h3>
+      <p>Expert in cultural and heritage tours. Fluent in English, Mandarin, and Malay.</p>
+    </div>
+    <div class="guide-card">
+      <img src="assets/guide 2.jpg" alt="Guide 2">
+      <h3>Leonard Goh</h3>
+      <p>Foodie & Nightlife specialist. Great for hidden gems and hawker centers!</p>
+    </div>
+    <div class="guide-card">
+      <img src="assets/guide 6.jpg" alt="Guide 3">
+      <h3>Sophia Lim</h3>
+      <p>Family-friendly guide with focus on Gardens by the Bay and Sentosa.</p>
+    </div>
+    <div class="guide-card">
+      <img src="assets/guide 4.jpg" alt="Guide 4">
+      <h3>Marcus Yeo</h3>
+      <p>Nature lover who leads hiking and eco-friendly tours in Singapore.</p>
+    </div>
+    
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>🌏 Withlocals SG</h2>
+      <p>Discover Singapore like a local. Travel smarter, live richer.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#do">What to Do</a></li>
+        <li><a href="#dont">What Not to Do</a></li>
+        <li><a href="#attractions">Attractions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: info@withlocals.sg</p>
+      <p>Phone: +65 1234 5678</p>
+      <div class="footer-socials">
+        <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+        <a href="#"><i class="ri-instagram-fill"></i></a>
+        <a href="#"><i class="ri-twitter-x-fill"></i></a>
+        <a href="#"><i class="ri-youtube-fill"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Withlocals SG. Designed with for travelers.</p>
+  </div>
+</footer>
+
+  
+  <script src="main.js"></script>
+</body>
+</html>

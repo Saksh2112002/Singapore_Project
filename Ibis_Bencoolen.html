@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ibis Bencoolen - Singapore</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+     * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f8f8f8;
+      color: #333;
+    }
+
+    header {
+      color: rgb(250, 247, 247);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .video-parallax {
+      position: relative;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .video-parallax video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      object-fit: cover;
+      
+    }
+
+    .video-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      z-index: 1;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .video-content h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .video-content p {
+      font-size: 1.5em;
+    }
+.booking {
+  max-width: 1100px;
+  background:lightblue;
+  margin: 2rem auto;
+  margin-top:-200px;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.booking h2 {
+  flex: 1 1 100%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.booking label {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+}
+
+.booking input[type="date"] {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.booking button {
+  flex: 1 1 100%;
+  background: #4836e9;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.booking button:hover {
+  background: #004d40;
+}
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
+
+  .video-parallax .overlay-text {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .video-content h2
+  {
+    margin-top: -100px;
+    color:black;
+    font-size: 31px;
+  }
+  .video-content p{
+    color:black;
+    font-size: medium;
+  }
+  .columns {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .about-text, .offers-text, .about-image, .offer-image, .gardens-image {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .about-image img,
+  .offer-image img,
+  .gardens-image img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .booking {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .booking input,
+  .booking select,
+  .booking button {
+    width: 100%;
+    margin-bottom: 1rem;
+    flex: none;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  .columns {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .about-text {
+    flex: 1 1 100%;
+  }
+
+  .about-image {
+    flex: 1 1 100%;
+    margin-top: 20px;
+  }
+  .attraction-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .attraction-text {
+    margin-top: 15px;
+  }
+   .columns-currect {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .current-text {
+    flex: 1 1 100%;
+  }
+
+  .current-image {
+    flex: 1 1 100%;
+    margin-top: 20px;
+  }
+  .info-columns > div {
+        flex: 1 1 100%;
+      }
+}
+
+
+    section.section-columns {
+      padding: 2rem 1rem;
+      max-width: 100%;
+      margin: auto;
+      background: #fff;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-text {
+  flex: 1 1 500px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+    .current-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border-bottom-left-radius: 50%;
+    }
+
+   .offers-text {
+  background-color: #fff3cd;
+  color: #333;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.offers-text h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.offers-text ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+.offers-text ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+    .info-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-columns > div {
+      flex: 1 1 30%;
+      background: #f2f2f2;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .info-columns h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-columns ul {
+      list-style: disc inside;
+      padding-left: 0;
+    }
+
+    .offers, .awards, .attractions, .events, .reviews {
+      background: #fefefe;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #5cd8ca;
+      border-radius: 10px;
+    }
+
+    .offers h2, .awards h2, .attractions h2, .events h2, .reviews h2 {
+      margin-bottom: 1rem;
+    }
+
+    .offers ul, .awards ul, .attractions ul, .events ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .offers ul li, .awards ul li, .attractions ul li, .events ul li {
+      padding: 0.3rem 0;
+    }
+    .columns-currect {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.current-text {
+  flex: 1 1 500px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.current-text h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.current-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.current-text li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.current-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.current-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+    .reviews p {
+      font-style: italic;
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .reviews p::before {
+      content: "“";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5rem;
+      color: #00796b;
+    }
+    .attractions {
+  margin: 50px auto;
+  padding: 0 20px;
+  max-width: 1100px;
+}
+
+.attractions h2 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #222;
+}
+
+.attraction-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.attraction-card img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.attraction-text {
+  flex: 1;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.attraction-text h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.attraction-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+
+
+    footer {
+      background: #3d23cf;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+   
+</style>
+<body>
+
+<section class="video-parallax">
+  <video autoplay muted loop playsinline>
+    <source src="assets/Ibis Singapore on Bencoolen.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-content">
+    <h2>Ibis Singapore on Bencoolen</h2>
+    <p>Comfort, convenience, and value in the heart of Bugis District.</p>
+  </div>
+</section>
+
+
+<div class="booking">
+  <h2>Book Your Stay</h2>
+  <label>
+    Arrival Date:
+    <input type="date" value="2025-07-18">
+  </label>
+  <label>
+    Departure Date:
+    <input type="date" value="2025-07-19">
+  </label>
+  <button onclick="alert('✅ Booking Done!')">BOOK NOW</button>
+</div>
+
+
+<section class="section-columns">
+  <div class="columns">
+    <div class="about-text">
+      <h2>About Ibis Bencoolen</h2>
+      <p>Located near Bugis MRT, Ibis Singapore on Bencoolen is a budget-friendly hotel offering smart comfort and sustainability. Ideal for both business and leisure travelers, it’s walking distance to shopping, museums, and temples.</p>
+      <p>Enjoy modern rooms, a 24-hour restaurant, eco-friendly initiatives, and easy access to Orchard Road, Suntec, and Marina Bay areas.</p>
+    </div>
+    <div class="about-image">
+      <img src="assets/Ibis Singapore on Bencoolen.jpg" alt="Ibis Bencoolen">
+    </div>
+  </div>
+
+  <div class="info-columns">
+    <div>
+      <h2>Accommodation</h2>
+      <ul>
+        <li>Standard Queen Room</li>
+        <li>Standard Twin Room</li>
+        <li>Accessible Room</li>
+        <li>Family Rooms</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Amenities</h2>
+      <ul>
+        <li>Free Wi-Fi</li>
+        <li>Eco-Certified</li>
+        <li>Restaurant & Bar</li>
+        <li>Self-Service Laundry</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Nearby Access</h2>
+      <ul>
+        <li>Bugis MRT Station</li>
+        <li>Orchard Road</li>
+        <li>Chinatown</li>
+        <li>Little India</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="columns-currect">
+    <div class="current-text current-offers-text">
+      <h2>Current Offers</h2>
+      <ul>
+        <li>🌱 Stay Green Package – Eco Reward Points</li>
+        <li>🍳 Breakfast Included – Online Bookings Only</li>
+        <li>👨‍👩‍👧‍👦 Family Stay Deal – Kids Stay Free</li>
+      </ul><br>
+      <h2>Awards & Recognition</h2>
+      <ul>
+        <li>🏅 ASEAN Green Hotel Award</li>
+        <li>🌟 TripAdvisor Traveler’s Choice 2025</li>
+        <li>💼 Best Budget Business Hotel – SEA</li>
+      </ul>
+    </div>
+    <div class="current-image">
+      <img src="assets/Ibis Singapore on Bencoolen view.jpg" alt="Ibis Bencoolen Room">
+    </div>
+  </div>
+
+  <div class="attractions">
+    <h2>Nearby Attractions</h2>
+
+    <div class="attraction-card">
+      <img src="assets/National Museum of Singapore.jpg" alt="National Museum of Singapore">
+      <div class="attraction-text">
+        <h3>National Museum</h3>
+        <p>Singapore’s oldest museum, showcasing cultural and historical exhibitions that are both informative and interactive.</p>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <img src="assets/Kampong Glam.jpg" alt="Kampong Glam">
+      <div class="attraction-text">
+        <h3>Kampong Glam</h3>
+        <p>Heritage district with rich Malay and Islamic culture, Sultan Mosque, vibrant cafes, and indie boutiques.</p>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <img src="assets/Singapore Art Museum.jpg" alt="Singapore Art Museum">
+      <div class="attraction-text">
+        <h3>Singapore Art Museum</h3>
+        <p>Dedicated to contemporary art from Southeast Asia, featuring thought-provoking exhibitions and installations.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="events">
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li>🎨 Artwalk Little India - Aug 2025</li>
+      <li>🍲 Bencoolen Street Food Fest - Sept 2025</li>
+      <li>📚 Singapore Writers Festival - Nov 2025</li>
+    </ul>
+  </div>
+
+  <div class="reviews">
+    <h2>Guest Reviews</h2>
+    <p>"Clean, quiet, and in the perfect location. Great value!" - Aisha T.</p>
+    <p>"Staff was friendly and the eco-program was a nice touch." - Ken W.</p>
+    <p>"Super accessible – MRT just 5 mins walk!" - Clara D.</p>
+  </div>
+
+  <footer>
+    <p>Ibis Singapore on Bencoolen, 170 Bencoolen St, Singapore 189657</p>
+    <p>Email: info@ibisbencoolen.sg | Phone: +65 6593 2888</p>
+    <p>&copy; 2025 Ibis Bencoolen. All Rights Reserved.</p>
+  </footer>
+</section>
+
+
+<div style="text-align:center; margin: 2rem 0;">
+  <a href="index.html" style="
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  ">← Back to Home</a>
+</div>
+
+
+</body>
+</html>

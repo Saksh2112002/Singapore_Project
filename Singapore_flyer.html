@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singapore Flyer – Singapore Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<style>
+    
+    *,*::before,*::after{
+      box-sizing:border-box;
+      margin:0;padding:0;
+    }
+    :root{
+      --brand:#b0005c;
+      --bg:#fffaf8;
+      --text:#333;
+      --radius:10px;
+      --shadow:0 2px 10px rgba(0,0,0,.12);
+      font-size:clamp(15px,1vw,18px);
+    }
+
+    body{
+      font-family:'Segoe UI',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }  
+
+   
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#fff;
+      padding:.75rem 1.25rem;
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:var(--brand);
+    }  
+
+    .nav-links{
+      display:flex;
+      gap:1.25rem;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:500;
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:var(--brand);
+    }  
+
+    .menu-icon{
+      display:none;
+      font-size:1.7rem;
+      cursor:pointer;
+      color:var(--brand);
+    }  
+
+    @media(max-width:768px){
+      .nav-links{
+        flex-direction:column;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:100%;
+        background:#fff;
+        padding:1rem;
+        display:none;
+        gap:1rem;
+        box-shadow:var(--shadow);
+      }  
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .menu-icon{
+        display:block;
+      }
+    }
+
+   .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0rem auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  padding-top: 45%; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.slider-nav button.active {
+  background: #b0005c;
+  opacity: 1;
+}
+
+/* Responsive css */
+@media (max-width: 1024px) {
+  .slide::before {
+    padding-top: 52%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide::before {
+    padding-top: 58%;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide::before {
+    padding-top: 64%;
+  }
+}
+
+    
+    .container{
+      max-width:1100px;
+      margin:2.5rem auto;
+      padding:0 1.25rem;
+      line-height:1.7;
+    }
+
+    .container img{
+      width:100%;
+      max-height:500px;
+      object-fit:cover;
+      border-radius:var(--radius);
+    }  
+
+    .container h1{
+      color:var(--brand);
+      margin:2rem 0 1rem;
+      font-size:2.5rem;
+    }
+
+    .container h2{
+      color:var(--brand);
+      margin:2rem 0 1rem;
+    }
+
+    ul{
+      padding-left:1.25rem;
+      margin-top:.5rem;
+    }
+
+    .back-btn{
+      display:inline-block;
+      margin:2rem 0;
+      padding:.65rem 1.25rem;
+      background:var(--brand);
+      color:#fff;
+      border-radius:var(--radius);
+      text-decoration:none;
+    }
+
+    .back-btn:hover{
+      background:#8a0047;
+    }
+
+  </style>
+<body>
+
+  
+  <nav>
+    <div class="logo">Withlocals SG</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#do">What to do</a></li>
+      <li><a href="index.html#dont">What Not to do</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </nav>
+
+
+ <div class="container">
+  <section class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="assets/Singapore Flyer.jjpg.jpg" alt="Singapore Flyer"></div>
+    <div class="slide"><img src="assets/Singapore Flyer - Capsule Ride.jpg" alt="Capsule Ride"></div>
+    <div class="slide"><img src="assets/City Lights at Marina Bay.jpg" alt="City Lights"></div>
+  </div>
+  <div class="slider-nav"></div>
+</section>
+  
+
+    <h1 id="overview">🎡 Singapore Flyer</h1>
+    <p>The <strong>Singapore Flyer</strong> is one of the world’s largest observation wheels, soaring 165 metres above the Marina Bay waterfront. Each 30‑minute ride reveals breathtaking 360‑degree views of the city skyline, Marina Bay Sands, and even parts of Malaysia and Indonesia on clear days.</p>
+
+    <h2 id="experience">What to Expect</h2>
+    <ul>
+    <li>
+  <strong>Singapore Flyer - Capsule Ride:</strong><br>
+  <img src="assets/Singapore Flyer - Capsule Ride.jpg" alt="Singapore Flyer" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 30 Raffles Ave, Singapore 039803<br>
+  <strong>🏙️ Overview:</strong> The Singapore Flyer is Asia’s largest observation wheel, offering breathtaking panoramic views of the city skyline.<br>
+  <strong>🎡 What You’ll Experience:</strong>
+  <ul>
+    <li>30-minute ride in a spacious, air-conditioned capsule</li>
+    <li>Views of Marina Bay, Gardens by the Bay, and even Malaysia or Indonesia on clear days</li>
+    <li>Optional in-capsule dining experience</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Circle Line → Promenade Station (CC4), Exit A<br>
+  <strong>🕐 Opening Hours:</strong> 2 PM – 10 PM (last entry 9:30 PM), Tuesday to Sunday (closed on Mondays)<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Book tickets online to avoid queues</li>
+    <li>Best views during sunset or at night</li>
+    <li>Try the Premium Sky Dining Flight for a romantic evening</li>
+  </ul>
+</li><br>
+
+     <li>
+  <strong>City Lights at Marina Bay:</strong><br>
+  <img src="assets/City Lights at Marina Bay.jpg" alt="Marina Bay at Night" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Marina Bay Waterfront Promenade, Singapore<br>
+  <strong>🏙️ Overview:</strong> When night falls, Singapore’s skyline transforms into a glowing masterpiece—reflections of skyscrapers dancing on Marina Bay's waters.<br>
+  <strong>🌆 What You’ll Experience:</strong>
+  <ul>
+    <li>Light and Water Show – Spectra at Marina Bay Sands</li>
+    <li>Lit-up landmarks like ArtScience Museum, Helix Bridge</li>
+    <li>Romantic night strolls along the waterfront</li>
+    <li>Photo ops of skyline with reflections</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Downtown Line or Circle Line → Bayfront Station (DT16/CE1), Exit D<br>
+  <strong>🕐 Best Time to Visit:</strong> 7 PM – 9 PM for the light show and skyline photography<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Catch the *Spectra – A Light & Water Show* at 8 PM or 9 PM</li>
+    <li>Use a tripod or night mode for best photos</li>
+    <li>Enjoy rooftop views from Marina Bay Sands SkyPark</li>
+  </ul>
+</li><br>
+
+     <li>
+  <strong>In‑Capsule Audio Guide – Singapore Flyer:</strong><br>
+  <img src="assets/In‑Capsule Audio Guide – Singapore Flyer.jpg" alt="Audio Guide in Capsule" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>🎧 Feature:</strong> The Singapore Flyer offers an immersive in-capsule audio guide that narrates the iconic landmarks and history of Singapore as you ascend.<br>
+  <strong>🔊 What You’ll Learn:</strong>
+  <ul>
+    <li>Stories behind Marina Bay Sands and the Esplanade</li>
+    <li>Fun facts about Singapore’s skyline and architecture</li>
+    <li>Insights into local culture, history, and future development</li>
+  </ul>
+  <strong>🌐 Available Languages:</strong> English, Mandarin, Japanese, Bahasa Melayu<br>
+  <strong>🎫 How to Access:</strong> Included with selected ticket types or available as an add-on at the counter<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Bring your own earphones for comfort and hygiene</li>
+    <li>Choose a quieter capsule time slot for a clearer experience</li>
+    <li>Great for first-time visitors wanting deeper insight into the city</li>
+  </ul>
+</li><br>
+ 
+     <li>
+  <strong>Premium Experiences – Singapore Flyer:</strong><br>
+  <img src="assets/Premium Experiences – Singapore Flyer.jpg" alt="Singapore Flyer Premium Capsule" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>💎 Overview:</strong> Elevate your ride with Singapore Flyer’s exclusive premium experiences designed for luxury, celebration, and unforgettable views.<br>
+  <strong>✨ What You Can Book:</strong>
+  <ul>
+    <li><strong>Sky Dining:</strong> 4-course meal served in a private capsule for two</li>
+    <li><strong>Singapore Sling Flight:</strong> Sip the iconic cocktail while soaking in views</li>
+    <li><strong>Celebration Flights:</strong> Customizable capsules for birthdays, anniversaries, or proposals</li>
+    <li><strong>Private Capsules:</strong> Book an entire capsule for privacy and VIP treatment</li>
+  </ul>
+  <strong>🛎️ Booking Info:</strong> Available online or at the ticketing counter. Advanced booking recommended.<br>
+  <strong>💼 Best For:</strong> Couples, families, corporate guests, and anyone seeking a once-in-a-lifetime moment<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Arrive 30 minutes early for check-in and welcome service</li>
+    <li>Choose evening slots for skyline lights and romantic atmosphere</li>
+    <li>Dress smart-casual for Sky Dining</li>
+  </ul>
+</li>
+
+    </ul>
+
+  
+
+    <h2 id="dining">On‑Site Dining & Retail</h2>
+    <ul>
+      <li><strong>Sky View Pavilion:</strong> Modern Cantonese cuisine with great harbour views.</li>
+      <li><strong>K-Fry Urban Korean:</strong> Popular for Korean fried chicken & cheese hotplates.</li>
+      <li><strong>Gift Shops:</strong> Take home miniature Flyer models and Singapore souvenirs.</li>
+    </ul>
+
+    <h2>📍 Location & Getting There</h2>
+    <p><strong>Address:</strong> 30 Raffles Avenue, Singapore 039803 (next to Marina Bay). Take MRT to <em>Promenade</em> Station (CC4/DT15) and follow Exit A — 5‑minute walk.</p>
+
+    <h2>🎫 Tickets & Hours</h2>
+    <p>Opening daily 2:00 PM – 10:00 PM (last admission 9:30 PM). Standard tickets from ~S$40 adult / S$25 child (online discounts often available).</p>
+
+    <h2 id="tips">Visitor Tips</h2>
+    <ul>
+      <li>Time your visit for sunset and stay onboard as city lights come alive.</li>
+      <li>Book online for timed entry and shorter queues.</li>
+      <li>Bring a zoom lens for stunning skyline photos through crystal‑clear glass.</li>
+    </ul>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+
+ <script src="Singapore_flyer.js"></script>
+
+</body>
+</html>
+

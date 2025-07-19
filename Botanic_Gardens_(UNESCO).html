@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singapore Botanic Gardens (UNESCO)</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fefdfb;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #b0005c;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-links li a:hover {
+      color:#b0005c;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color:#b0005c;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+ .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0rem auto;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  padding-top: 45%; 
+}
+
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.slider-nav button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.slider-nav button.active {
+  background: #b0005c;
+  opacity: 1;
+}
+
+
+@media (max-width: 1024px) {
+  .slide::before {
+    padding-top: 52%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide::before {
+    padding-top: 58%;
+  }
+  .slider-nav button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide::before {
+    padding-top: 64%;
+  }
+}
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .container h1 {
+      font-size: 2.5rem;
+      color:  #b0005c;
+      margin-top: 30px;
+    }
+
+    .container p {
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color:#b0005c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color:#8a0047;
+    }
+  </style>
+</head>
+<body>
+
+
+<nav>
+  <div class="logo">Withlocals SG</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#do">What to Do</a></li>
+    <li><a href="index.html#dont">What Not to Do</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="container">
+
+<section class="slider">
+  <div class="slide-track" id="slideTrack">
+    <div class="slide"><img src="assets/Singapore Botanic Gardens (UNESCO).jpg" alt="Botanic Gardens View" /></div>
+    <div class="slide"><img src="assets/Rainforest Trail.jpg" alt="Rainforest Trail" /></div>
+    <div class="slide"><img src="assets/Swan Lake.jpg" alt="Swan Lake" /></div>
+  </div>
+  <div class="slider-nav" id="sliderNav"></div>
+</section>
+
+
+
+
+  <h1>🌿 Singapore Botanic Gardens (UNESCO)</h1>
+
+  <p>The Singapore Botanic Gardens, established in 1859, is the country's first and only UNESCO World Heritage Site. It's a peaceful, lush sanctuary in the heart of the city where nature, history, and culture blend seamlessly. A favorite for locals and tourists alike, it spans over 82 hectares.</p>
+
+  <h2>🌸 Highlights</h2>
+  <ul>
+    <li>
+  <strong>National Orchid Garden:</strong><br>
+  <img src="assets/National Orchid Garden.jpg" alt="National Orchid Garden" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Singapore Botanic Gardens, 1 Cluny Rd, Singapore 259569<br>
+  <strong>🏙️ Overview:</strong> Located within the UNESCO-listed Singapore Botanic Gardens, this garden showcases over 1,000 orchid species and 2,000 hybrids in a beautifully landscaped setting.<br>
+  <strong>🌸 What You’ll Find:</strong>
+  <ul>
+    <li>Orchid Collections: VIP orchids named after global figures</li>
+    <li>Cool House: Mist-filled glasshouse with rare mountain orchids</li>
+    <li>Tropical Montane Orchidetum: Elevated walkway & unique orchids</li>
+    <li>Heritage Orchid Garden: Preserved hybrids from the early 1900s</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Downtown Line → Botanic Gardens Station (DT9/CC19), Exit A, 15-minute walk<br>
+  <strong>🕐 Opening Hours:</strong> Daily, 8:30 AM – 7:00 PM (last entry 6 PM)<br>
+  <strong>🎫 Admission:</strong> Adults: SGD 5 | Seniors (60+): SGD 1 | Children under 12: Free<br>
+  <strong>🌟 Tips:</strong>
+  <ul>
+    <li>Best visited in the morning or late afternoon</li>
+    <li>Bring a camera—orchid displays are stunning year-round</li>
+    <li>Visit the gift shop for unique orchid-themed souvenirs</li>
+  </ul>
+</li><br>
+
+   <li>
+  <strong>Rainforest Trail:</strong><br>
+  <img src="assets/Rainforest Trail.jpg" alt="Rainforest Trail Singapore Botanic Gardens" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Near Tyersall Entrance, Singapore Botanic Gardens, 1 Cluny Road, Singapore 259569<br>
+  <strong>🌳 Overview:</strong> The Rainforest Trail is a lush, shaded path winding through a dense patch of preserved primary rainforest. It showcases Singapore’s native flora and the biodiversity of tropical forests in a peaceful, educational setting.<br>
+  <strong>🌱 What You’ll Find:</strong>
+  <ul>
+    <li>Over 300 species of flora native to the region</li>
+    <li>Ancient trees towering over the canopy</li>
+    <li>Educational signboards detailing plant species and ecology</li>
+    <li>Quiet, cooling path ideal for nature walks</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Downtown Line → Botanic Gardens Station (DT9/CC19), Exit A, follow signs to Tyersall Entrance<br>
+  <strong>🕐 Opening Hours:</strong> Daily from 5 AM to 12 Midnight (same as Singapore Botanic Gardens)<br>
+  <strong>💡 Tips:</strong>
+  <ul>
+    <li>Wear comfortable walking shoes — trail paths can be slightly uneven</li>
+    <li>Best enjoyed early morning or late evening for cooler temperatures</li>
+    <li>Bring insect repellent and water for your walk</li>
+  </ul>
+</li><br>
+
+    <li>
+  <strong>Swan Lake:</strong><br>
+  <img src="assets/Swan Lake.jpg" alt="Swan Lake at Singapore Botanic Gardens" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Near the Tanglin Gate entrance, Singapore Botanic Gardens, 1 Cluny Road, Singapore 259569<br>
+  <strong>🦢 Overview:</strong> Swan Lake is one of the oldest ornamental water features in Singapore and a tranquil gem within the Botanic Gardens. It features a beautiful fountain and is home to elegant mute swans from Amsterdam.<br>
+  <strong>🌿 What You’ll Find:</strong>
+  <ul>
+    <li>Peaceful pond with swans gliding gracefully across the water</li>
+    <li>Iconic white swan sculpture in the center of the lake</li>
+    <li>Benches and shaded areas for relaxation and photography</li>
+    <li>Lush surroundings with flowering trees and water plants</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Downtown Line → Botanic Gardens Station (DT9/CC19), walk toward Tanglin Gate<br>
+  <strong>🕐 Opening Hours:</strong> Daily from 5 AM to 12 Midnight<br>
+  <strong>💡 Tips:</strong>
+  <ul>
+    <li>Great for peaceful morning strolls or romantic sunset walks</li>
+    <li>Bring a camera — perfect spot for nature and wildlife photography</li>
+    <li>Look out for monitor lizards and turtles in the water</li>
+  </ul>
+</li><br>
+
+    <li>
+  <strong>Jacob Ballas Children’s Garden:</strong><br>
+  <img src="assets/Jacob Ballas Children’s Garden.jpg" alt="Jacob Ballas Children's Garden" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> 481 Bukit Timah Road, Singapore 259769 (adjacent to the main Singapore Botanic Gardens)<br>
+  <strong>🌱 Overview:</strong> The first garden in Asia dedicated to children, Jacob Ballas Children’s Garden is designed to nurture a love for nature through play and learning. It’s a fun, safe, and interactive space where kids can explore, discover, and grow.<br>
+  <strong>🎡 Attractions & Highlights:</strong>
+  <ul>
+    <li>Adventure play zones with bridges, treehouses, and slides</li>
+    <li>Mini farming and gardening zones</li>
+    <li>Water play area for cooling off</li>
+    <li>Interactive exhibits on photosynthesis and plant life</li>
+    <li>Maze, sand play, and sensory trails</li>
+  </ul>
+  <strong>👨‍👩‍👧‍👦 Ideal For:</strong>
+  <ul>
+    <li>Families with children aged 14 and below</li>
+    <li>Educational visits and school excursions</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Downtown Line → Botanic Gardens Station (DT9/CC19), walk toward Bukit Timah Gate<br>
+  <strong>🕐 Opening Hours:</strong> 8 AM – 7 PM (Last entry at 6:30 PM) | Closed on Mondays (except PH)<br>
+  <strong>💡 Tips:</strong>
+  <ul>
+    <li>Admission is free for all children and accompanying adults</li>
+    <li>Bring extra clothes for water play and sunscreen</li>
+    <li>No entry for adults unless accompanied by a child</li>
+  </ul>
+</li><br>
+ 
+    <li>
+  <strong>Ginger Garden:</strong><br>
+  <img src="assets/Ginger Garden.jpg" alt="Ginger Garden Singapore Botanic Gardens" style="width:100%; max-height:300px; border-radius:10px; margin-top:10px;" />
+  <br><br>
+  <strong>📍 Location:</strong> Near the Tanglin Gate, Singapore Botanic Gardens, 1 Cluny Road, Singapore 259569<br>
+  <strong>🌿 Overview:</strong> The Ginger Garden is a lush, tropical paradise featuring over 250 species of gingers and related plants. It’s an aromatic, shaded retreat perfect for a relaxing stroll surrounded by vibrant flowers and unique foliage.<br>
+  <strong>🌺 Highlights:</strong>
+  <ul>
+    <li>Massive collection of ornamental gingers from around the world</li>
+    <li>Waterfall feature and stream running through the garden</li>
+    <li>Canopy walk with elevated wooden paths for scenic views</li>
+    <li>Night-blooming plants like torch gingers and wild bananas</li>
+  </ul>
+  <strong>📸 Instagram-worthy Spots:</strong>
+  <ul>
+    <li>Walk-through waterfall cave with photo-friendly lighting</li>
+    <li>Ginger-shaped pavilion surrounded by lush greenery</li>
+  </ul>
+  <strong>🚇 How to Get There:</strong> MRT Circle Line → Botanic Gardens Station (CC19/DT9), enter via Tanglin Gate<br>
+  <strong>🕐 Opening Hours:</strong> 5 AM – 12 Midnight daily<br>
+  <strong>💡 Tips:</strong>
+  <ul>
+    <li>Best visited in the morning for cooler temperatures</li>
+    <li>Great for nature photography and peaceful picnics</li>
+    <li>Wear non-slip shoes if exploring near the waterfall</li>
+  </ul>
+</li><br>
+
+  </ul>
+
+  <h2>📍 Location</h2>
+  <p>1 Cluny Road, Singapore 259569</p>
+
+  <h2>🚇 How to Get There</h2>
+  <p>Take the Downtown Line or Circle Line MRT → Alight at Botanic Gardens Station (DT9/CC19)</p>
+
+  <h2>🕐 Opening Hours</h2>
+  <p>5:00 AM to 12:00 Midnight daily (free entry)</p>
+  <p><strong>National Orchid Garden:</strong> 8:30 AM – 7:00 PM (last entry: 6 PM, entry fees apply)</p>
+
+  <h2>🌟 Visitor Tips</h2>
+  <ul>
+    <li>Wear comfortable walking shoes and bring water.</li>
+    <li>Visit early morning or late afternoon to avoid heat.</li>
+    <li>Use the Eco Lake or Tanglin Gate for scenic entrances.</li>
+    <li>Great picnic spot! Bring light snacks or enjoy nearby cafes.</li>
+  </ul>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+</div>
+<script src="Botanic_Gardens.js"></script>
+</body>
+</html>
